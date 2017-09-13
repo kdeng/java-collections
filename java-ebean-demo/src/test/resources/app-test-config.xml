@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.springframework.org/schema/beans" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd"
+		>
+
+	<!-- enable annotation -->
+	<import resource="classpath*:META-INF/osnz/app-config.xml"/>
+
+	<!-- mysql database source -->
+	<!--<context:property-placeholder location="classpath:app-test-config.properties" ignore-resource-not-found="true" ignore-unresolvable="true"/>-->
+	<!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">-->
+	<!--<property name="driverClassName" value="${dataSource.driverClassName}"/>-->
+	<!--<property name="url" value="${dataSource.url}"/>-->
+	<!--<property name="username" value="${dataSource.username}"/>-->
+	<!--<property name="password" value="${dataSource.password}"/>-->
+	<!--<property name="defaultAutoCommit" value="false" />-->
+	<!--</bean>-->
+
+	<!--<jdbc:initialize-database data-source="dataSource" enabled="true">-->
+	<!--<jdbc:script location="classpath:testdb/mysql_schema.sql"/>-->
+	<!--<jdbc:script location="classpath:testdb/mysql_data.sql"/>-->
+	<!--</jdbc:initialize-database>-->
+
+	<jdbc:embedded-database id="dataSource" type="H2">
+		<jdbc:script location="classpath:testdb/hsql-schema.sql"/>
+		<jdbc:script location="classpath:testdb/hsql-data.sql"/>
+	</jdbc:embedded-database>
+
+</beans>

@@ -1,8 +1,8 @@
-# Tutorials of personal practices
+# Tutorials
 
-I am using this repository to collect all my personal practices as sample.
+I am using this repository to collect all my personal tutorials as sample.
 
-## all works
+## All works
 ### Java
 ### Groovy
 ### Ebean

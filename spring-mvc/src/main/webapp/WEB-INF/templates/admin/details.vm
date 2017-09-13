@@ -1,0 +1,3 @@
+User detail VM : <br />
+
+Hello ${value}

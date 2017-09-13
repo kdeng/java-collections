@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>nz.net.osnz.parent</groupId>
+		<artifactId>java-parent</artifactId>
+		<version>3.4</version>
+	</parent>
+
+	<groupId>nz.net.osnz.demos</groupId>
+	<artifactId>spring-web-services</artifactId>
+	<version>1.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>spring-web-services</name>
+	<description>Simple Spring Web Module</description>
+	<url>https://github.com/kdeng/spring-demos</url>
+
+	<scm>
+		<!-- This setting will be replaced by the maven-release-plugin -->
+		<url>https://github.com/kdeng/spring-demos</url>
+		<connection>scm:git:git@git.oschina.net/spring-demos.git</connection>
+		<developerConnection>scm:git:git@git.oschina.net:spring-demos.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.ws</groupId>
+			<artifactId>spring-ws-core</artifactId>
+			<version>2.2.4.RELEASE</version>
+		</dependency>
+
+	</dependencies>
+
+</project>

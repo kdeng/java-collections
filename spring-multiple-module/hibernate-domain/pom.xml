@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>nz.net.osnz.parent</groupId>
+		<artifactId>groovy-parent</artifactId>
+		<version>3.5</version>
+	</parent>
+
+	<groupId>nz.net.osnz.practice</groupId>
+	<artifactId>hibernate-domain</artifactId>
+	<version>1.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>hibernate-domain</name>
+	<description>hibernate-domain</description>
+	<url>https://github.com/kdeng/hibernate-domain</url>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>nz.net.osnz.composite</groupId>
+			<artifactId>composite-groovy</artifactId>
+			<version>[3.13,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>nz.net.osnz.composite</groupId>
+			<artifactId>composite-lmz</artifactId>
+			<version>[1.5,2)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>nz.net.osnz.composite</groupId>
+			<artifactId>composite-spring-jdbc</artifactId>
+			<version>[4.2,)</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.aspectj</groupId>
+					<artifactId>aspectjrt</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>nz.net.osnz.common</groupId>
+			<artifactId>common-druid</artifactId>
+			<version>[4.2,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>nz.net.osnz.composite</groupId>
+			<artifactId>composite-hibernate</artifactId>
+			<version>[4.4,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>nz.net.osnz.composite</groupId>
+			<artifactId>composite-spring-test</artifactId>
+			<version>[4.1.4,)</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.187</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>
