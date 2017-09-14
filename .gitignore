@@ -17,7 +17,8 @@ bower_dependencies
 .DS_Store
 
 # IDE profiles
-.idea
+.idea/
+*/.idea/
 *.iml
 .classpath
 .project
@@ -30,6 +31,9 @@ release.properties
 
 # Log
 *.log
+
+# SQL
+**/*.sql
 
 # Gradle related
 .gradle
@@ -48,7 +52,7 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 # Docker and Vagrant related
-.vagrant/
+*/.vagrant/
 
 # Security related
 credentials.yml

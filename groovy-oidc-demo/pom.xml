@@ -4,14 +4,14 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nz.net.osnz</groupId>
-	<artifactId>ffxnz-oidc-java-sample</artifactId>
+	<artifactId>groovy-oidc-demo</artifactId>
 	<version>1.1-SNAPSHOT</version>
 
 	<packaging>war</packaging>
-	<name>ffxnz-oidc-java-sample</name>
+	<name>groovy-oidc-demo</name>
 	<description>ffxnz-oidc-java-sample</description>
 
-	<url>https://github.com/kdeng/ffxnz-oidc-java-sample</url>
+	<url>https://github.com/kdeng/java-tutorials/groovy-oidc-demo</url>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -142,7 +142,6 @@
 			<artifactId>spring-security-web</artifactId>
 			<version>${spring-security.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.security.oauth</groupId>
 			<artifactId>spring-security-oauth2</artifactId>
@@ -173,6 +172,8 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+		<!-- OIDC implementation -->
 		<dependency>
 			<groupId>org.mitre</groupId>
 			<artifactId>openid-connect-client</artifactId>
@@ -182,7 +183,7 @@
 		<dependency>
 			<groupId>nz.net.osnz.common</groupId>
 			<artifactId>common-ebean</artifactId>
-			<version>[8.1-SNAPSHOT]</version>
+			<version>[8.1,9)</version>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
