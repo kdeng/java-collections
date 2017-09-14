@@ -13,7 +13,33 @@
 	<url>https://github.com/kdeng/java-tutorials</url>
 
   <modules>
-    <module>spring-security-demo</module>
-    <module>spring-session-demo</module>
+  	<!-- Groovy-based Demos -->
+  	<module>groovy-cxf-demo</module>
+  	<module>groovy-oidc-demo</module>
+
+  	<!-- Java-based Demos -->
+  	<module>java-ebean-demo</module>
+  	<module>java-osgi-demo</module>
+  	<module>java-service-provider-interface</module>
+
+  	<!-- Kotlin-based Demos -->
+  	<module>kotlin-practice-1</module>
+
+  	<!-- Spring-related Demos -->
+  	<module>spring-boot</module>
+    <module>spring-boot-thymeleaf</module>
+    <module>spring-crud-api-demo</module>
+    <module>spring-extjs</module>
+    <module>spring-multiple-module</module>
+    <module>spring-mvc</module>
+    <module>spring-reactor</module>
+    <module>spring-session</module>
+    <module>spring-security</module>
+    <module>spring-web</module>
+    <module>spring-web-services</module>
+    <module>spring-websocket</module>
+
+    <!-- Other Demos -->
+	<module>maven-plugin-demo</module>    
   </modules>
 </project>
