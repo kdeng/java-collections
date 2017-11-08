@@ -19,7 +19,6 @@
 
   	<!-- Java-based Demos -->
   	<module>java-ebean-demo</module>
-  	<module>java-osgi-demo</module>
   	<module>java-service-provider-interface</module>
 
   	<!-- Kotlin-based Demos -->
@@ -40,6 +39,7 @@
     <module>spring-websocket</module>
 
     <!-- Other Demos -->
-	<module>maven-plugin-demo</module>    
+	<module>maven-plugin-demo</module>
+    <module>java-concurrent</module>
   </modules>
 </project>

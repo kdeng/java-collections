@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>nz.net.osnz.train</groupId>
-    <artifactId>train-websocket</artifactId>
+    <artifactId>spring-websocket</artifactId>
     <version>1.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
