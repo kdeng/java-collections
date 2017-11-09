@@ -2,36 +2,29 @@ package net.osnz.module.user;
 
 import net.osnz.module.user.domain.User;
 import net.osnz.module.user.repository.UserRepository;
-import nz.ac.auckland.agent.AgentLoader;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import javax.inject.Inject;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:app-test-config.xml"})
-//@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class UserRepositoryTest {
 
 	protected final static Logger log = LoggerFactory.getLogger(UserRepositoryTest.class);
 
-	@Inject
+	@Autowired
 	private UserRepository userRepository;
-
-	@BeforeClass
-	public static void initAgent() {
-		AgentLoader.findAgentInClasspath("avaje-ebeanorm-agent","debug=1");
-//		AgentLoader.loadAgent(System.getProperty("user.home") + "/.m2/repository/org/avaje/ebeanorm/avaje-ebeanorm-agent/4.5.3/avaje-ebeanorm-agent-4.5.3.jar");
-	}
 
 	@Before
 	public void init() {

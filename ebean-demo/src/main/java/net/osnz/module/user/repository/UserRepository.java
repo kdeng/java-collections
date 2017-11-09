@@ -1,8 +1,6 @@
 package net.osnz.module.user.repository;
 
 
-
-import io.ebean.Ebean;
 import io.ebean.EbeanServer;
 import io.ebean.EbeanServerFactory;
 import io.ebean.config.ServerConfig;
@@ -46,8 +44,6 @@ public final class UserRepository {
 
 			serverConfig.setDdlGenerate(false);
 			serverConfig.setDdlRun(false);
-
-
 //      serverConfig.setLoggingLevel(LogLevel.valueOf("DEBUG"));
 //      serverConfig.setDebugSql(true);
 //      serverConfig.setLoggingToJavaLogger(true);
@@ -64,17 +60,17 @@ public final class UserRepository {
 	}
 
 	public final User get(Long id) {
-		return Ebean.find(User.class, id);
+		return ebeanServer.find(User.class, id);
 	}
 
 	public List<User> findAll() {
-		return Ebean.find(User.class).findList();
+		return ebeanServer.find(User.class).findList();
 	}
 
 	public Long save(User user) {
 		Long userId = null;
 		try {
-			Ebean.save(Arrays.asList(new User[]{user}));
+			ebeanServer.save(user);
 			userId = user.getId();
 		} catch (Exception ex) {
 			log.error("Failed to save user : " + user.getMobile(), ex);

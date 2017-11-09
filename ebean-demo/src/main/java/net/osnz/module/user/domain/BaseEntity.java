@@ -16,7 +16,7 @@ public class BaseEntity implements Serializable {
 
 	@Id
 //  @NotNull
-	@Column(name = "ID", unique = true, nullable = true)
+	@Column(name = "ID", unique = true)
 //  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "OSNZ.OSNZ_SEQUENCE")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 //  @GeneratedValue(strategy = GenerationType.AUTO)
