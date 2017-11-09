@@ -56,3 +56,4 @@ gradle-app.setting
 
 # Security related
 credentials.yml
+src/test/resources/testdb/
