@@ -26,11 +26,11 @@
 
 	<dependencies>
 
-		<!--<dependency>-->
-			<!--<groupId>nz.net.osnz.composite</groupId>-->
-			<!--<artifactId>composite-spring-mvc</artifactId>-->
-			<!--<version>[4.1.4,)</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>nz.net.osnz.composite</groupId>
+			<artifactId>composite-spring-mvc</artifactId>
+			<version>[5.1,6)</version>
+		</dependency>
 
 		<dependency>
 			<groupId>nz.net.osnz.composite</groupId>
@@ -81,22 +81,5 @@
 		</dependency>
 
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${spring-boot.version}</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>

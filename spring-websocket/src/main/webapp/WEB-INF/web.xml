@@ -20,7 +20,7 @@
 
     <filter>
         <filter-name>UriFilter</filter-name>
-        <filter-class>nz.net.osnz.train.filter.WebSocketFilter</filter-class>
+        <filter-class>nz.net.osnz.demos.filter.WebSocketFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>UriFilter</filter-name>
@@ -29,7 +29,7 @@
 
     <servlet>
         <servlet-name>WebSocket</servlet-name>
-        <servlet-class>nz.net.osnz.train.servlet.EchoWebSocketServlet</servlet-class>
+        <servlet-class>nz.net.osnz.demos.servlet.EchoWebSocketServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>

@@ -9,6 +9,6 @@
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
 
 	<jaxws:endpoint address="/personService" id="personService"
-	                implementor="nz.net.osnz.train.ws.service.WsPersonLookupImpl"/>
+	                implementor="nz.net.osnz.demos.ws.service.WsPersonLookupImpl"/>
 
 </beans>
