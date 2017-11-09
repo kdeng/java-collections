@@ -2,80 +2,81 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>nz.net.osnz.parent</groupId>
-        <artifactId>groovy-parent</artifactId>
-        <version>5.4</version>
-    </parent>
+	<parent>
+		<groupId>nz.net.osnz.parent</groupId>
+		<artifactId>groovy-parent</artifactId>
+		<version>5.4</version>
+	</parent>
 
-    <groupId>nz.net.osnz.demos</groupId>
-    <artifactId>spring-websocket</artifactId>
-    <version>1.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+	<groupId>nz.net.osnz.demos</groupId>
+	<artifactId>spring-websocket</artifactId>
+	<version>1.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 
-    <name>spring-websocket</name>
-    <description>spring-websocket</description>
-    <url>https://github.com/kdeng/java-tutorials/spring-websocket</url>
+	<name>spring-websocket</name>
+	<description>spring-websocket</description>
+	<url>https://github.com/kdeng/java-tutorials/spring-websocket</url>
 
-    <properties>
-        <jetty.maven.plugin.version>8.1.10.v20130312</jetty.maven.plugin.version>
-        <sonar.language>groovy</sonar.language>
-    </properties>
+	<properties>
+		<java.version>1.8</java.version>
+		<jetty.maven.plugin.version>9.3.22.v20171030</jetty.maven.plugin.version>
+		<sonar.language>groovy</sonar.language>
+	</properties>
 
-    <dependencies>
+	<dependencies>
 
-        <dependency>
-            <groupId>nz.net.osnz.composite</groupId>
-            <artifactId>composite-logging</artifactId>
-            <version>[1,)</version>
-        </dependency>
+		<dependency>
+			<groupId>nz.net.osnz.composite</groupId>
+			<artifactId>composite-logging</artifactId>
+			<version>[4.3,)</version>
+		</dependency>
 
-        <dependency>
-            <groupId>nz.net.osnz.composite</groupId>
-            <artifactId>composite-groovy</artifactId>
-            <version>[1,)</version>
-        </dependency>
+		<dependency>
+			<groupId>nz.net.osnz.composite</groupId>
+			<artifactId>composite-groovy</artifactId>
+			<version>[4.5,)</version>
+		</dependency>
 
-        <dependency>
-            <groupId>nz.net.osnz.composite</groupId>
-            <artifactId>composite-spring-webmvc</artifactId>
-            <version>[1.3,)</version>
-        </dependency>
+		<dependency>
+			<groupId>nz.net.osnz.composite</groupId>
+			<artifactId>composite-spring-mvc</artifactId>
+			<version>[5.1,)</version>
+		</dependency>
 
-        <dependency>
-            <groupId>javax.websocket</groupId>
-            <artifactId>javax.websocket-api</artifactId>
-            <version>1.0</version>
-        </dependency>
+		<dependency>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-api</artifactId>
+			<version>1.1</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-websocket</artifactId>
-            <version>8.1.14.v20131031</version>
-        </dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-websocket</artifactId>
+			<version>8.2.0.v20160908</version>
+		</dependency>
 
-    </dependencies>
+	</dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty.maven.plugin.version}</version>
-                <configuration>
-                    <scanIntervalSeconds>5</scanIntervalSeconds>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.eclipse.jetty</groupId>
-                        <artifactId>jetty-websocket</artifactId>
-                        <version>8.1.14.v20131031</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-        </plugins>
-    </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.maven.plugin.version}</version>
+				<configuration>
+					<scanIntervalSeconds>5</scanIntervalSeconds>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.eclipse.jetty</groupId>
+						<artifactId>jetty-websocket</artifactId>
+						<version>8.2.0.v20160908</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

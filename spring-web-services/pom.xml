@@ -15,22 +15,19 @@
 	<packaging>jar</packaging>
 
 	<name>spring-web-services</name>
-	<description>Simple Spring Web Module</description>
-	<url>https://github.com/kdeng/spring-demos</url>
+	<description>spring-web-services</description>
+	<url>https://github.com/kdeng/java-tutorials/spring-web-services</url>
 
-	<scm>
-		<!-- This setting will be replaced by the maven-release-plugin -->
-		<url>https://github.com/kdeng/spring-demos</url>
-		<connection>scm:git:git@git.oschina.net/spring-demos.git</connection>
-		<developerConnection>scm:git:git@git.oschina.net:spring-demos.git</developerConnection>
-		<tag>HEAD</tag>
-	</scm>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.ws</groupId>
 			<artifactId>spring-ws-core</artifactId>
-			<version>2.2.4.RELEASE</version>
+			<version>3.0.0.RELEASE</version>
 		</dependency>
 
 	</dependencies>

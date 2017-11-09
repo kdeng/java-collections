@@ -33,9 +33,7 @@ public class UserDto implements Serializable {
 		if (shoppingCart == null || shoppingCart.isEmpty()) {
 			stringBuilder.append("empty");
 		} else {
-			shoppingCart.forEach((k, v) -> {
-				stringBuilder.append("[").append(k).append(":").append(v).append("]");
-			});
+			shoppingCart.forEach((k, v) -> { stringBuilder.append("[").append(k).append(":").append(v).append("]"); });
 		}
 		return stringBuilder.toString();
 	}
