@@ -62,9 +62,6 @@ class Application {
 		return new JeeComponentsBeanFactoryPostProcessor(Application.class.getPackage().getName());
 	}
 
-	@Bean
-
-
 //	@Bean
 //	public FilterRegistrationBean filterRegistration() {
 //		FilterRegistrationBean registration = new FilterRegistrationBean(new MyFilter());

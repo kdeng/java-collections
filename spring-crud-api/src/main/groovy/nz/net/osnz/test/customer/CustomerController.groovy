@@ -1,9 +1,13 @@
 package nz.net.osnz.test.customer
 
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
-import org.springframework.web.bind.annotation.*
+import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestMethod
+import org.springframework.web.bind.annotation.RestController
 
-import javax.inject.Inject
 import javax.servlet.http.HttpServletResponse
 
 /**
@@ -14,7 +18,7 @@ import javax.servlet.http.HttpServletResponse
 @RequestMapping(value = '/customer')
 public class CustomerController {
 
-	@Inject
+	@Autowired
 	CustomerRepository repository
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -45,11 +49,11 @@ public class CustomerController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public Map delete(@PathVariable('id') Long id, HttpServletResponse response) {
 		if (repository.deleteCustomer(id)) {
-			return [result:true, id: id]
+			return [result: true, id: id]
 		}
 
 		response.setStatus(HttpServletResponse.SC_BAD_REQUEST)
-		return [result:false]
+		return [result: false]
 	}
 
 }

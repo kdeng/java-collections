@@ -1,57 +1,40 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <parent>
         <groupId>nz.net.osnz.parent</groupId>
         <artifactId>groovy-parent</artifactId>
-        <version>2.5</version>
+        <version>5.4</version>
     </parent>
 
-    <groupId>nz.net.osnz.train</groupId>
-    <artifactId>train-spi</artifactId>
+    <groupId>nz.net.osnz.demos</groupId>
+    <artifactId>java-service-provider-interface</artifactId>
     <packaging>jar</packaging>
     <version>1.1-SNAPSHOT</version>
 
-    <name>Open Source New Zealand : train SPI</name>
-    <description>A simple sample to show how SPI works</description>
-    <url>https://github.com/kdeng/train-spi</url>
-
-    <scm>
-        <url>https://github.com/kdeng/train-spi</url>
-        <connection>scm:git:git@github.com:kdeng/train-spi.git</connection>
-        <developerConnection>scm:git:git@github.com:kdeng/train-spi.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
+    <name>java-service-provider-interface</name>
+    <description>java-service-provider-interface</description>
+    <url>https://github.com/kdeng/java-tutorials/java-service-provider-interface</url>
 
     <dependencies>
 
         <dependency>
             <groupId>nz.net.osnz.composite</groupId>
             <artifactId>composite-groovy</artifactId>
-            <version>[3,)</version>
+            <version>[4.5,)</version>
         </dependency>
 
         <dependency>
             <groupId>nz.net.osnz.composite</groupId>
             <artifactId>composite-logging</artifactId>
-            <version>[3,)</version>
+            <version>[4.3,)</version>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-core</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-classic</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
             <groupId>nz.net.osnz.composite</groupId>
-            <artifactId>composite-unittest</artifactId>
-            <version>[3,4)</version>
+            <artifactId>composite-unit-test</artifactId>
+            <version>[5.5,6)</version>
             <scope>test</scope>
         </dependency>
 
