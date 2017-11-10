@@ -35,7 +35,8 @@ public final class UserRepository {
 		try {
 			ServerConfig serverConfig = new ServerConfig();
 			serverConfig.setName("osnz");
-			dataSource.getConnection().setAutoCommit(false);
+
+			//dataSource.getConnection().setAutoCommit(false);
 
 			serverConfig.setDataSource(dataSource);
 

@@ -12,27 +12,42 @@
 
 	<url>https://github.com/kdeng/java-tutorials</url>
 
-  <modules>
+    <properties>
+		<sonar.language>java</sonar.language>
+	</properties>
 
-  	<!-- Kotlin-based Demos -->
-  	<module>kotlin-demo</module>
+	<modules>
+		<!-- Kotlin-based Demos -->
+		<module>kotlin-demo</module>
 
-  	<!-- Spring-related Demos -->
-  	<module>spring-boot</module>
-    <module>spring-boot-thymeleaf</module>
-    <module>spring-crud-api</module>
-	<module>spring-cxf</module>
-    <!--<module>spring-extjs</module>-->
-    <module>spring-reactor</module>
-    <module>spring-session</module>
-    <module>spring-security-oauth</module>
-    <module>spring-web-services</module>
-    <module>spring-websocket</module>
+		<!-- Spring-related Demos -->
+		<module>spring-boot</module>
+		<module>spring-boot-thymeleaf</module>
+		<module>spring-crud-api</module>
+		<module>spring-cxf</module>
+		<!--<module>spring-extjs</module>-->
+		<module>spring-reactor</module>
+		<module>spring-session</module>
+		<module>spring-security-oauth</module>
+		<module>spring-web-services</module>
+		<module>spring-websocket</module>
 
-    <!-- Other Demos -->
-	<module>ebean-demo</module>
-	<module>maven-plugin-demo</module>
-    <module>java-concurrent</module>
-	<module>java-service-provider-interface</module>
-  </modules>
+		<!-- Other Demos -->
+		<module>ebean-demo</module>
+		<module>maven-plugin-demo</module>
+		<module>java-concurrent</module>
+		<module>java-service-provider-interface</module>
+	</modules>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>sonar-maven-plugin</artifactId>
+					<version>3.3.0.603</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>

@@ -19,6 +19,7 @@
 
 	<properties>
 		<spring-boot.version>1.5.8.RELEASE</spring-boot.version>
+        <sonar.language>grvy</sonar.language>
 	</properties>
 
 	<dependencies>

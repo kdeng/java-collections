@@ -16,6 +16,7 @@
 	<properties>
 		<reactor-bus.version>2.0.8.RELEASE</reactor-bus.version>
 		<reactor-core.version>2.0.8.RELEASE</reactor-core.version>
+		<sonar.language>java</sonar.language>
 	</properties>
 
 	<dependencies>

@@ -18,6 +18,7 @@
 		<spring-boot.version>1.5.8.RELEASE</spring-boot.version>
 		<spring.version>5.0.1.RELEASE</spring.version>
 		<spring-security.version>4.2.3.RELEASE</spring-security.version>
+        <sonar.language>grvy</sonar.language>
 	</properties>
 
 	<dependencies>

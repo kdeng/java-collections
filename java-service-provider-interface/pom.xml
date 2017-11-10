@@ -16,6 +16,10 @@
     <description>java-service-provider-interface</description>
     <url>https://github.com/kdeng/java-tutorials/java-service-provider-interface</url>
 
+    <properties>
+		<sonar.language>java</sonar.language>
+	</properties>
+
     <dependencies>
 
         <dependency>

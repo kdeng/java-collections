@@ -14,8 +14,11 @@
 	<packaging>maven-plugin</packaging>
 
 	<name>maven-plugin-demo</name>
-
 	<description>maven-plugin-demo</description>
+
+	<properties>
+        <sonar.language>grvy</sonar.language>
+	</properties>
 
 	<dependencies>
 

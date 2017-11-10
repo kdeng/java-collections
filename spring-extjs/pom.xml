@@ -21,7 +21,7 @@
 
     <properties>
         <jetty.maven.plugin.version>8.1.10.v20130312</jetty.maven.plugin.version>
-        <sonar.language>groovy</sonar.language>
+        <sonar.language>grvy</sonar.language>
     </properties>
 
     <dependencies>
