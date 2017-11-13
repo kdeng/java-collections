@@ -1,53 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>io.osnz</groupId>
-	<artifactId>java-tutorials</artifactId>
-	<version>1.0</version>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.osnz</groupId>
+    <artifactId>java-tutorials</artifactId>
+    <version>1.0</version>
 
-	<packaging>pom</packaging>
-	<name>java-tutorials</name>
-	<description>java-tutorials</description>
+    <packaging>pom</packaging>
+    <name>java-tutorials</name>
+    <description>java-tutorials</description>
 
-	<url>https://github.com/kdeng/java-tutorials</url>
+    <url>https://github.com/kdeng/java-tutorials</url>
 
     <properties>
-		<sonar.language>java</sonar.language>
-	</properties>
+        <sonar.language>java</sonar.language>
+    </properties>
 
-	<modules>
-		<!-- Kotlin-based Demos -->
-		<module>kotlin-demo</module>
+    <modules>
+        <!-- Kotlin-based Demos -->
+        <module>kotlin-demo</module>
 
-		<!-- Spring-related Demos -->
-		<module>spring-boot</module>
-		<module>spring-boot-thymeleaf</module>
-		<module>spring-crud-api</module>
-		<module>spring-cxf</module>
-		<!--<module>spring-extjs</module>-->
-		<module>spring-reactor</module>
-		<module>spring-session</module>
-		<module>spring-security-oauth</module>
-		<module>spring-web-services</module>
-		<module>spring-websocket</module>
+        <!-- Spring-related Demos -->
+        <module>spring-batch</module>
+        <module>spring-boot</module>
+        <module>spring-boot-thymeleaf</module>
+        <module>spring-crud-api</module>
+        <module>spring-cxf</module>
+        <!--<module>spring-extjs</module>-->
+        <module>spring-reactor</module>
+        <module>spring-session</module>
+        <module>spring-security-oauth</module>
+        <module>spring-web-services</module>
+        <module>spring-websocket</module>
 
-		<!-- Other Demos -->
-		<module>ebean-demo</module>
-		<module>maven-plugin-demo</module>
-		<module>java-concurrent</module>
-		<module>java-service-provider-interface</module>
-	</modules>
+        <!-- Other Demos -->
+        <module>ebean-demo</module>
+        <module>maven-plugin-demo</module>
+        <module>java-concurrent</module>
+        <module>java-service-provider-interface</module>
+    </modules>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>sonar-maven-plugin</artifactId>
-					<version>3.3.0.603</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>3.3.0.603</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>
