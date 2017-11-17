@@ -39,6 +39,7 @@
         <module>maven-plugin-demo</module>
         <module>java-concurrent</module>
         <module>java-service-provider-interface</module>
+        <module>java-thread-pool</module>
     </modules>
 
     <build>
