@@ -39,10 +39,7 @@
 
         <!-- Spring Security -->
         <module>spring-security-oauth</module>
-        
 
-        
-        
         <!-- Spring Web Service -->
         <module>spring-boot-ws</module>
         <module>spring-boot-ws-cxf</module>
@@ -51,6 +48,9 @@
         <module>spring-boot-data-ebean</module>
         <module>spring-boot-data-mongodb</module>
 
+        <!-- Spring RxJava -->
+        <module>spring-boot-rxjava</module>
+
         <!-- Other -->
         <module>maven-plugin-demo</module>
 
@@ -58,7 +58,6 @@
         <module>java8-concurrent</module>
         <module>java8-spi</module>
         <module>java8-thread-pool</module>
-        <module>rxjava-sample</module>
 
     </modules>
 
