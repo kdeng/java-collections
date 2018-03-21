@@ -1,10 +1,6 @@
 <?xml version="1.0"?><!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN" "http://www.puppycrawl.com/dtds/configuration_1_2.dtd"><!-- See the Sun Code Conventions at http://java.sun.com/docs/codeconv/ -->
 <module name="Checker">
     <!-- Checks for Headers                                --><!-- See http://checkstyle.sf.net/config_header.html   -->
-    <module name="RegexpHeader">
-        <property name="header" value="^// Copyright Fairfax Media \d\d\d\d$"/>
-        <property name="fileExtensions" value="java"/>
-    </module>
     <module name="FileLength">
         <property name="max" value="30000"/>
     </module>

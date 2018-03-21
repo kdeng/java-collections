@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.osnz</groupId>
@@ -20,26 +19,47 @@
     <modules>
         <!-- Kotlin-based Demos -->
         <module>kotlin-demo</module>
+        <!-- Spring -->
+        <module>spring-websocket-jetty</module>
 
-        <!-- Spring-related Demos -->
-        <module>spring-batch</module>
-        <module>spring-boot</module>
-        <module>spring-boot-thymeleaf</module>
-        <module>spring-crud-api</module>
-        <module>spring-cxf</module>
+        <!-- Spring Batch Demos -->
+        <module>spring-boot-batch</module>
+
+        <!-- Spring MVC -->
+        <!-- <module>spring-boot-mvc-extjs</module> --> <!-- TODO -->
+        <module>spring-boot-mvc-j2ee</module>
+        <module>spring-boot-mvc-templates</module>
+        <module>spring-boot-mvc-thymeleaf</module>
+        <module>spring-boot-mvc-crud-api</module>
+
         <!--<module>spring-extjs</module>-->
-        <module>spring-reactor</module>
-        <module>spring-session</module>
-        <module>spring-security-oauth</module>
-        <module>spring-web-services</module>
-        <module>spring-websocket</module>
+        <module>spring-boot-reactor</module>
+        <module>spring-boot-session</module>
+        <module>spring-boot-webflux</module>
 
-        <!-- Other Demos -->
-        <module>ebean-demo</module>
+        <!-- Spring Security -->
+        <module>spring-security-oauth</module>
+        
+
+        
+        
+        <!-- Spring Web Service -->
+        <module>spring-boot-ws</module>
+        <module>spring-boot-ws-cxf</module>
+
+        <!-- Spring Data related -->
+        <module>spring-boot-data-ebean</module>
+        <module>spring-boot-data-mongodb</module>
+
+        <!-- Other -->
         <module>maven-plugin-demo</module>
-        <module>java-concurrent</module>
-        <module>java-service-provider-interface</module>
-        <module>java-thread-pool</module>
+
+        <!-- Java 8 -->
+        <module>java8-concurrent</module>
+        <module>java8-spi</module>
+        <module>java8-thread-pool</module>
+        <module>rxjava-sample</module>
+
     </modules>
 
     <build>
@@ -48,7 +68,28 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>sonar-maven-plugin</artifactId>
-                    <version>3.3.0.603</version>
+                    <version>3.4.0.905</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>3.0.0</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <configLocation>${project.basedir}/codestyle/checkstyle.xml</configLocation>
+                        <suppressionsLocation>${project.basedir}/codestyle/test-suppressions.xml</suppressionsLocation>
+                        <failsOnError>true</failsOnError>
+                        <failOnViolation>true</failOnViolation>
+                        <encoding>UTF-8</encoding>
+                        <consoleOutput>true</consoleOutput>
+                        <linkXRef>false</linkXRef>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>

@@ -1,7 +1,7 @@
 package nz.net.osnz.app.service
 
-import nz.net.osnz.app.model.MyUserDetails
 import nz.net.osnz.app.domain.User
+import nz.net.osnz.app.model.MyUserDetails
 import nz.net.osnz.app.repository.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.userdetails.UserDetailsService

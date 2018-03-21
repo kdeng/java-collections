@@ -5,13 +5,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>nz.net.osnz.demos</groupId>
-	<artifactId>spring-reactor</artifactId>
+	<artifactId>spring-boot-reactor</artifactId>
 	<version>1.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-reactor</name>
-	<description>spring-reactor</description>
-	<url>https://github.com/kdeng/java-tutorials/spring-reactor</url>
+	<name>spring-boot-reactor</name>
+	<description>spring-boot-reactor</description>
+	<url>https://github.com/kdeng/java-tutorials/spring-boot-reactor</url>
 
 	<properties>
 		<reactor-bus.version>2.0.8.RELEASE</reactor-bus.version>

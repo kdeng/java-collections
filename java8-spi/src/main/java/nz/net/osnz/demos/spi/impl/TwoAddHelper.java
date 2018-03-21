@@ -1,20 +1,13 @@
 package nz.net.osnz.demos.spi.impl;
 
-import nz.net.osnz.demos.spi.domain.User;
-import nz.net.osnz.demos.spi.helper.UserHelper;
+import nz.net.osnz.demos.spi.helper.AddHelper;
 
 /**
  * @author Kefeng Deng (deng@51any.com)
  */
-public class BUserHelper implements UserHelper {
+public class TwoAddHelper implements AddHelper {
     @Override
-    public String display(User user) {
-        if (user.getAge() < 16) {
-            return "B kid";
-        } else if (user.getAge() < 30) {
-            return "B young";
-        } else {
-            return "B man";
-        }
+    public int add(int a, int b) {
+        return a + b + 2;
     }
 }

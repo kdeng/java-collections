@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>nz.net.osnz.demos</groupId>
+    <artifactId>java8-thread-pool</artifactId>
+    <version>1.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>java8-thread-pool</name>
+    <description>java8-thread-pool</description>
+    <url>https://github.com/kdeng/java-tutorials/java8-thread-pool</url>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+
+        <!-- Groovy compiler -->
+        <dependency>
+            <groupId>nz.net.osnz.composite</groupId>
+            <artifactId>composite-groovy</artifactId>
+            <version>[4.5,)</version>
+        </dependency>
+        <dependency>
+            <groupId>nz.net.osnz.composite</groupId>
+            <artifactId>composite-logging</artifactId>
+            <version>[4.3,5)</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>io.repaint.maven</groupId>
+                <artifactId>tiles-maven-plugin</artifactId>
+                <version>2.10</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <filtering>false</filtering>
+                    <tiles>
+                        <tile>io.osnz.tiles:groovy-tile:[1.6,)</tile>
+                    </tiles>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

@@ -1,4 +1,4 @@
-package nz.net.osnz.demos.j2ee.reactor;
+package nz.net.osnz.demos.reactor;
 
 /**
  * @author Kefeng Deng (deng@51any.com)

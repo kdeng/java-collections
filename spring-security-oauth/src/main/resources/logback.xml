@@ -6,7 +6,7 @@
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{20} - %msg%n</pattern>
         </encoder>
     </appender>
-
+<!-- 
     <appender name="APPLICATION" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>log/application.log</File>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
@@ -19,7 +19,7 @@
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
-    </appender>
+    </appender> -->
 
     <logger name="nz.net.osnz" level="DEBUG" additivity="false">
         <!--<appender-ref ref="APPLICATION" />-->

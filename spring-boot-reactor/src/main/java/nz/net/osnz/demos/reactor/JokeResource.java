@@ -1,4 +1,4 @@
-package nz.net.osnz.demos.j2ee.reactor;
+package nz.net.osnz.demos.reactor;
 
 /**
  * Created by kdeng on 7/03/14.

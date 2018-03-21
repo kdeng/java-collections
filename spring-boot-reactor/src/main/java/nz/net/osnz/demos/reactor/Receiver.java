@@ -1,4 +1,4 @@
-package nz.net.osnz.demos.j2ee.reactor;
+package nz.net.osnz.demos.reactor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
