@@ -58,8 +58,10 @@
         <module>java8-concurrent</module>
         <module>java8-spi</module>
         <module>java8-thread-pool</module>
-    <module>spring-boot-jms</module>
-    <module>spring-boot-activemq</module>
+
+        <!-- Spring boot JMS -->
+        <module>spring-boot-jms</module>
+        <module>spring-boot-jms-activemq</module>
   </modules>
 
     <build>

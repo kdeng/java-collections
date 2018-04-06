@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>nz.net.osnz</groupId>
-    <artifactId>spring-boot-activemq</artifactId>
+    <artifactId>spring-boot-jms-activemq</artifactId>
     <version>1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>spring-boot-activemq</name>
-    <description>spring-boot-activemq</description>
-    <url>https://github.com/kdeng/spring-boot-activemq</url>
+    <name>spring-boot-jms-activemq</name>
+    <description>spring-boot-jms-activemq</description>
+    <url>https://github.com/kdeng/spring-boot-jms-activemq</url>
 
     <properties>
         <java.version>1.8</java.version>
