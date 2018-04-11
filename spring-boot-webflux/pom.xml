@@ -14,8 +14,8 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-webflux.version>5.0.2.RELEASE</spring-webflux.version>
-        <spring-boot.version>2.0.0.RELEASE</spring-boot.version>
+        <spring-webflux.version>5.0.5.RELEASE</spring-webflux.version>
+        <spring-boot.version>2.0.1.RELEASE</spring-boot.version>
     </properties>
 
     <dependencies>
@@ -88,17 +88,17 @@
                     <artifactId>jackson-annotations</artifactId>
                     <groupId>com.fasterxml.jackson.core</groupId>
                 </exclusion>
-                <exclusion>
-                    <groupId>io.projectreactor</groupId>
-                    <artifactId>reactor-core</artifactId>
-                </exclusion>
+                <!--<exclusion>-->
+                    <!--<groupId>io.projectreactor</groupId>-->
+                    <!--<artifactId>reactor-core</artifactId>-->
+                <!--</exclusion>-->
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-core</artifactId>
-            <version>[3.1.5.RELEASE]</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>io.projectreactor</groupId>-->
+            <!--<artifactId>reactor-core</artifactId>-->
+            <!--<version>[3.1.6.RELEASE]</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webflux</artifactId>
@@ -208,37 +208,5 @@
 
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>repositories</id>
-            <activation>
-                <property>
-                    <name>!skip-repositories</name>
-                </property>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>spring-snapshots</id>
-                    <url>http://repo.spring.io/snapshot</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </repository>
-                <repository>
-                    <id>oss-jfrog-snapshots</id>
-                    <url>https://oss.jfrog.org/libs-snapshot</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </repository>
-                <repository>
-                    <id>spring-milestone</id>
-                    <url>http://repo.spring.io/milestone</url>
-                </repository>
-            </repositories>
-        </profile>
-    </profiles>
-
 
 </project>

@@ -22,7 +22,7 @@
 	<properties>
         <sonar.language>grvy</sonar.language>
 		<java.version>1.8</java.version>
-		<spring-boot.version>2.0.0.RELEASE</spring-boot.version>
+		<spring-boot.version>2.0.1.RELEASE</spring-boot.version>
 	</properties>
 
 	<dependencies>
