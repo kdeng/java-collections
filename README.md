@@ -23,31 +23,40 @@ I am using this repository to collect all my personal tutorials as sample.
 4. Spring Data
     - spring-boot-data-ebean (DONE)
     - spring-boot-data-mongodb (?)
-5. Spring Reactor
+5. Spring JMS
+    - spring-boot-jms (DONE)
+    - spring-boot-jms-activemq (DONE)
+    - spring-boot-jms-rabbitmq (DONE)
+6. Spring Reactor
     - spring-boot-reactor (TODO)
-6. Spring WebFlux
-    - spring-boot-webflux (DONE)
-7. Spring Session
-    - spring-boot-session (?)
-8. Spring RxJava
+7. Spring RxJava
     - spring-boot-rxjava (DONE)
-9. Spring Web Service
+8. Spring Security
+    - spring-security-oauth (?)
+9. Spring Session
+    - spring-boot-session (?)
+10. Spring WebFlux
+    - spring-boot-webflux (DONE)
+11. Spring Web Service
     - spring-boot-ws (DONE)
     - spring-boot-ws-cxf (DONE)
-10. Spring Security
-    - spring-security-oauth (?)
-11. Spring WebSocket
+12. Spring WebSocket
     - spring-websocket-jetty (?)
-12. Kotlin
+13. Kotlin
     - kotlin-demo (?)
-13. Maven Plugin
+14. Maven Plugin
     - maven-plugin-demo (?)
+15. Apache Camel
+    - spring-file-route (TODO)
 
 ## Changelog
-* 2018-03-21
+* 2018-04
+    * Added Spring JMS
+    * Added Spring JMS ActiveMQ
+    * Added Spring JMS RabbitMQ
+* 2018-03
     * Fixed all unit tests
     * Updated README
-* 2018-03-20
     * Updated all dependencies to latest version
     * Fixed all tests
 

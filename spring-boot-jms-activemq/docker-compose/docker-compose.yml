@@ -1,0 +1,10 @@
+
+activemq:
+    image: webcenter/activemq
+    environment:
+        - ACTIVEMQ_CONFIG_NAME=amqp-server-1
+        - ACTIVEMQ_ADMIN_PASSWORD=admin
+        - ACTIVEMQ_ADMIN_LOGIN=admin
+    ports:
+        - 8161:8161
+        - 61616:61616
