@@ -31,6 +31,7 @@ class Sender {
         String message = "#$idx Hello From RabbitMQ"
         LOG.info("### Sending message #{} : {}", idx, message)
         rabbitTemplate.convertAndSend(Application.QUEUE_NAME, message)
+        rabbitTemplate.convertAndSend(Application.HELLO_QUEUE_NAME, message)
     }
 
 

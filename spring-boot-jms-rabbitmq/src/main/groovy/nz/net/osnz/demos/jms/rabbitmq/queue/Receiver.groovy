@@ -21,11 +21,16 @@ class Receiver {
     @Autowired
     RabbitTemplate rabbitTemplate
 
-    @Scheduled(fixedRate = 1000L)
+    @Scheduled(fixedRate = 5000L)
     void receiveMessage() {
         LOG.info("### Trying to receive a message")
-        String msg = new String(rabbitTemplate.receiveAndConvert(Application.QUEUE_NAME))
-        LOG.info("### Received message : {}", msg)
+        Object content = rabbitTemplate.receiveAndConvert(Application.QUEUE_NAME)
+        if (content) {
+            String msg = new String(rabbitTemplate.receiveAndConvert(Application.QUEUE_NAME))
+            LOG.info("### Received message : {}", msg)
+        } else {
+            LOG.info("NO message in queue '{}'", Application.QUEUE_NAME)
+        }
     }
 
 

@@ -3,16 +3,13 @@ package nz.net.osnz.demos.jms.rabbitmq
 import com.rabbitmq.client.BuiltinExchangeType
 import com.rabbitmq.client.Channel
 
-import com.rabbitmq.client.ConnectionFactory
-import com.sun.jndi.ldap.pool.PooledConnectionFactory
 import groovy.transform.CompileStatic
 import org.springframework.amqp.core.AmqpAdmin
-import org.springframework.amqp.rabbit.annotation.EnableRabbit
+import org.springframework.amqp.core.Queue
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory
 import org.springframework.amqp.rabbit.connection.Connection
 import org.springframework.amqp.rabbit.core.RabbitAdmin
 import org.springframework.amqp.rabbit.core.RabbitTemplate
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter
 import org.springframework.boot.Banner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -34,6 +31,8 @@ class Application {
     static final String TOPIC_NAME = "spring-boot-exchange"
 
     static final String QUEUE_NAME = "spring-boot-queue"
+
+    static final String HELLO_QUEUE_NAME = "spring-boot-hello-queue"
 
     static final String CONTRACT_FANOUT = "CONTRACT_FANOUT"
 
@@ -73,7 +72,10 @@ class Application {
         return rabbitTemplate
     }
 
-
+    @Bean
+    Queue helloQueue() {
+        return new Queue(Application.HELLO_QUEUE_NAME)
+    }
 //    @Bean
 //    Queue queue() {
 //        return new Queue(queueName, false)
