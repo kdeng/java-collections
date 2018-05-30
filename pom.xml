@@ -63,6 +63,7 @@
         <module>spring-boot-jms</module>
         <module>spring-boot-jms-activemq</module>
     <module>spring-boot-jms-rabbitmq</module>
+    <module>spring-boot-appengine-demo</module>
   </modules>
 
     <build>
