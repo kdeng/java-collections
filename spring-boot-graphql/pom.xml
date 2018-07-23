@@ -3,7 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>nz.net.osnz.demos</groupId>
+    <parent>
+    	<groupId>io.osnz.demos</groupId>
+    	<artifactId>java-tutorials</artifactId>
+    	<version>1</version>
+    	<relativePath>../pom.xml</relativePath>
+    </parent>
+
     <artifactId>spring-boot-graphql</artifactId>
     <version>1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -13,9 +19,6 @@
     <url>https://github.com/kdeng/spring-boot-graphql</url>
 
     <properties>
-        <java.version>1.8</java.version>
-        <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
-        <tiles-maven-plugin.version>2.12</tiles-maven-plugin.version>
         <graphql-java.version>4.4.0</graphql-java.version>
     </properties>
 
@@ -59,10 +62,6 @@
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-api</artifactId>
                 </exclusion>
-                <!--<exclusion>-->
-                    <!--<groupId>javax.servlet</groupId>-->
-                    <!--<artifactId>javax.servlet-api</artifactId>-->
-                <!--</exclusion>-->
                 <exclusion>
                     <groupId>com.fasterxml.jackson.core</groupId>
                     <artifactId>jackson-core</artifactId>
@@ -97,18 +96,6 @@
             <!--<version>${graphql-java.version}</version>-->
         <!--</dependency>-->
 
-        <!--<dependency>-->
-            <!--<groupId>io.github.graphql-java</groupId>-->
-            <!--<artifactId>graphql-java-annotations</artifactId>-->
-            <!--<version>5.3</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>com.embedler.moon.graphql</groupId>-->
-            <!--<artifactId>spring-graphql-common</artifactId>-->
-            <!--<version>2.1.0-2016-05-22T16-50-32</version>-->
-        <!--</dependency>-->
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -116,56 +103,52 @@
             <scope>provided</scope>
         </dependency>
 
-
-
         <!-- core dependencies -->
         <dependency>
             <groupId>nz.net.osnz.composite</groupId>
             <artifactId>composite-spring-mvc</artifactId>
-            <version>[5.5,6)</version>
+            <version>${composite-spring-mvc.version}</version>
         </dependency>
         <dependency>
             <groupId>nz.net.osnz.composite</groupId>
             <artifactId>composite-spring-boot</artifactId>
-            <version>[2.5,3)</version>
+            <version>${composite-spring-boot.version}</version>
         </dependency>
-
-
         <dependency>
             <groupId>nz.net.osnz.composite</groupId>
             <artifactId>composite-spring-boot-undertow</artifactId>
-            <version>[1.5,2)</version>
+            <version>${composite-spring-boot-undertow.version}</version>
         </dependency>
         <dependency>
             <groupId>nz.net.osnz.composite</groupId>
             <artifactId>composite-logging</artifactId>
-            <version>[4.4,5)</version>
+            <version>${composite-logging.version}</version>
         </dependency>
         <dependency>
             <groupId>nz.net.osnz.common</groupId>
             <artifactId>common-jackson</artifactId>
-            <version>[1.3,2)</version>
+            <version>${common-jackson.version}</version>
         </dependency>
 
          <!--test scope-->
         <dependency>
             <groupId>nz.net.osnz.composite</groupId>
             <artifactId>composite-spring-boot-test</artifactId>
-            <version>[2.3,3)</version>
+            <version>${composite-spring-boot-test.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>nz.net.osnz.composite</groupId>
             <artifactId>composite-spring-test</artifactId>
-            <version>[5.5,6)</version>
+            <version>${composite-spring-test.version}</version>
             <scope>test</scope>
         </dependency>
 
-         <!--spring boot devtools-->
+        <!-- spring boot devtools -->
         <dependency>
             <groupId>nz.net.osnz.composite</groupId>
             <artifactId>composite-spring-boot-devtools</artifactId>
-            <version>[2.3,3)</version>
+            <version>${composite-spring-boot-devtools.version}</version>
             <optional>true</optional>
         </dependency>
 
