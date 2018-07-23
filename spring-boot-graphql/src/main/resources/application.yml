@@ -1,0 +1,32 @@
+
+### Server Settings
+server:
+    port: 9000
+    undertow:
+      io-threads: 15
+      worker-threads: 150
+
+      accesslog:
+        enabled: true
+    compression:
+      enabled: true
+      mime-types: text/xml, text/css, text/html, application/json
+      min-response-size: 4096
+
+graphql:
+    servlet:
+        mapping: /graphql
+        enabled: true
+        corsEnabled: true
+
+graphiql:
+    mapping: /graphiql
+    endpoint: /graphql
+    enabled: true
+    pageTitle: GraphiQL
+    cdn:
+        enabled: false
+        version: 0.11.11
+spring:
+    application:
+        name: spring-boot-graphql-app
