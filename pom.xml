@@ -92,6 +92,7 @@
 
         <!-- GraphQL related -->
         <module>spring-boot-graphql</module>
+    <module>spring-boot-jib-demo</module>
   </modules>
 
     <build>
