@@ -93,6 +93,8 @@
         <!-- GraphQL related -->
         <module>spring-boot-graphql</module>
     <module>spring-boot-jib-demo</module>
+    <module>micronaut-web-demo</module>
+    <module>spring-boot-cucumber</module>
   </modules>
 
     <build>
