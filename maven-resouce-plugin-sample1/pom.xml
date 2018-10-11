@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <groupId>nz.net.osnz</groupId>
+    <artifactId>maven-resouce-plugin-sample1</artifactId>
+    <version>1.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>maven-resouce-plugin-sample1</name>
+    <description>maven-resouce-plugin-sample1</description>
+    <url>https://github.com/kdeng/maven-resouce-plugin-sample1</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+
+        <environmentScale>5</environmentScale>
+        <tile-deploy.port>9009</tile-deploy.port>
+        <environmentDockerRegistry>https://dockerhub.io</environmentDockerRegistry>
+        <organisation.domain>osnz</organisation.domain>
+        <organisation.group>sample</organisation.group>
+        <parsedVersion.majorVersion>1</parsedVersion.majorVersion>
+
+        <!-- CPU -->
+        <quota-limits.tinyCpu>200m</quota-limits.tinyCpu>
+        <quota-limits.smallCpu>300m</quota-limits.smallCpu>
+        <quota-limits.mediumCpu>500m</quota-limits.mediumCpu>
+        <quota-limits.largeCpu>800m</quota-limits.largeCpu>
+        <quota-limits.extraLargeCpu>1200m</quota-limits.extraLargeCpu>
+
+        <quota-requests.tinyCpu>10m</quota-requests.tinyCpu>
+        <quota-requests.smallCpu>15m</quota-requests.smallCpu>
+        <quota-requests.mediumCpu>25m</quota-requests.mediumCpu>
+        <quota-requests.largeCpu>40m</quota-requests.largeCpu>
+        <quota-requests.extraLargeCpu>60m</quota-requests.extraLargeCpu>
+
+
+        <!-- Memory 128M to 2048M -->
+        <quota-limits.tinyMemory>128Mi</quota-limits.tinyMemory>
+        <quota-limits.smallMemory>256Mi</quota-limits.smallMemory>
+        <quota-limits.mediumMemory>512Mi</quota-limits.mediumMemory>
+        <quota-limits.largeMemory>1Gi</quota-limits.largeMemory>
+        <quota-limits.extraLargeMemory>2Gi</quota-limits.extraLargeMemory>
+
+        <quota-requests.tinyMemory>64Mi</quota-requests.tinyMemory>
+        <quota-requests.smallMemory>128Mi</quota-requests.smallMemory>
+        <quota-requests.mediumMemory>256Mi</quota-requests.mediumMemory>
+        <quota-requests.largeMemory>512Mi</quota-requests.largeMemory>
+        <quota-requests.extraLargeMemory>1Gi</quota-requests.extraLargeMemory>
+
+        <!-- Memory 64M to 1024M -->
+        <!--<quota-limits.tinyMemory>64Mi</quota-limits.tinyMemory>-->
+        <!--<quota-limits.smallMemory>128Mi</quota-limits.smallMemory>-->
+        <!--<quota-limits.mediumMemory>256Mi</quota-limits.mediumMemory>-->
+        <!--<quota-limits.largeMemory>512Gi</quota-limits.largeMemory>-->
+        <!--<quota-limits.extraLargeMemory>1Gi</quota-limits.extraLargeMemory>-->
+
+        <!--<quota-requests.tinyMemory>32Mi</quota-requests.tinyMemory>-->
+        <!--<quota-requests.smallMemory>64Mi</quota-requests.smallMemory>-->
+        <!--<quota-requests.mediumMemory>128Mi</quota-requests.mediumMemory>-->
+        <!--<quota-requests.largeMemory>256Mi</quota-requests.largeMemory>-->
+        <!--<quota-requests.extraLargeMemory>512Mi</quota-requests.extraLargeMemory>-->
+    </properties>
+
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/kubernetes</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.stma</groupId>
+                <artifactId>yamllint-maven-plugin</artifactId>
+                <version>0.1b</version>
+                <executions>
+                    <execution>
+                        <id>yamllint</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>yamllint</goal>
+                        </goals>
+                        <configuration>
+                            <projectBaseDir>src/main/kubernetes</projectBaseDir>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>collate-application</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <attach>true</attach>
+                            <includeBaseDirectory>false</includeBaseDirectory>
+                            <descriptorRefs>
+                                <descriptorRef>kubernetes-application</descriptorRef>
+                            </descriptorRefs>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <profiles>
+        <profile>
+            <id>shellcheck</id>
+            <activation>
+                <file>
+                    <exists>${basedir}/src/main/kubernetes/bin</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.6.0</version>
+                        <executions>
+                            <execution>
+                                <id>validate-scripts</id>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <phase>compile</phase>
+                                <configuration>
+                                    <workingDirectory>${basedir}</workingDirectory>
+                                    <executable>bash</executable>
+                                    <arguments>
+                                        <argument>-c</argument>
+                                        <argument>shellcheck -e SC1117 ${basedir}/src/main/kubernetes/bin/*</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

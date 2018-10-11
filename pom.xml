@@ -95,6 +95,9 @@
     <module>spring-boot-jib-demo</module>
     <module>micronaut-web-demo</module>
     <module>spring-boot-cucumber</module>
+    <module>spring-boot-async-sample</module>
+    <module>java-file-operations</module>
+    <module>maven-resouce-plugin-sample1</module>
   </modules>
 
     <build>

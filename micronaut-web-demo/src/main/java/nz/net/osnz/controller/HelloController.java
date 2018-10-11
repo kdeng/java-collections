@@ -6,7 +6,9 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Produces;
 import io.micronaut.validation.Validated;
 import io.reactivex.Single;
+import nz.net.osnz.services.HelloService;
 
+import javax.inject.Inject;
 import javax.validation.constraints.NotBlank;
 
 /**
@@ -15,6 +17,9 @@ import javax.validation.constraints.NotBlank;
 @Controller("/")
 @Validated
 public class HelloController {
+
+    @Inject
+    private HelloService helloService;
 
     @Get("/hello")
     @Produces(MediaType.TEXT_PLAIN)
@@ -25,7 +30,7 @@ public class HelloController {
     @Get("/hello/{name}")
     @Produces(MediaType.TEXT_PLAIN)
     public Single<String> hello(@NotBlank String name) {
-        return Single.just("Hello " + name + "!");
+        return Single.just(helloService.hello(name));
     }
 
 }
