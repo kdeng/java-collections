@@ -67,7 +67,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <tiles>
-                        <tile>io.osnz.tiles:kotlin-tile:1.2</tile>
+                        <tile>io.osnz.tiles:kotlin-tile:[1.4,2)</tile>
                     </tiles>
                 </configuration>
             </plugin>

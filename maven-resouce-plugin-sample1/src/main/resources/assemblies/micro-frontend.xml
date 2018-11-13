@@ -1,6 +1,6 @@
 <assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
 
-    <id>kubernetes-application</id>
+    <id>micro-frontend</id>
 
     <formats>
         <format>zip</format>
@@ -10,7 +10,7 @@
 
     <fileSets>
         <fileSet>
-            <outputDirectory>${project.artifactId}</outputDirectory>
+            <outputDirectory>.</outputDirectory>
             <directory>src/main/kubernetes</directory>
             <fileMode>0664</fileMode>
             <directoryMode>0775</directoryMode>
@@ -27,10 +27,10 @@
             <includes>
                 <include>bin/*</include>
             </includes>
-            <filtered>false</filtered>
+            <filtered>true</filtered>
         </fileSet>
         <fileSet>
-            <outputDirectory>${project.artifactId}</outputDirectory>
+            <outputDirectory>.</outputDirectory>
             <directory>src/main/kubernetes</directory>
             <fileMode>0644</fileMode>
             <directoryMode>0775</directoryMode>
@@ -44,14 +44,14 @@
             <filtered>true</filtered>
         </fileSet>
         <fileSet>
-            <outputDirectory>${project.artifactId}</outputDirectory>
+            <outputDirectory>.</outputDirectory>
             <directory>target/resources/kubernetes</directory>
             <fileMode>0664</fileMode>
             <directoryMode>0775</directoryMode>
             <includes>
                 <include>**/versions.yaml</include>
             </includes>
-            <filtered>true</filtered>
+            <filtered>false</filtered>
         </fileSet>
         <fileSet>
             <outputDirectory>.</outputDirectory>
@@ -64,7 +64,7 @@
             <filtered>false</filtered>
         </fileSet>
         <fileSet>
-            <outputDirectory>${project.artifactId}</outputDirectory>
+            <outputDirectory>.</outputDirectory>
             <directory>target/resources/kubernetes</directory>
             <fileMode>0644</fileMode>
             <directoryMode>0775</directoryMode>
@@ -75,7 +75,7 @@
                 <exclude>bin/*</exclude>
                 <exclude>**/versions.yaml</exclude>
             </excludes>
-            <filtered>true</filtered>
+            <filtered>false</filtered>
         </fileSet>
 
     </fileSets>

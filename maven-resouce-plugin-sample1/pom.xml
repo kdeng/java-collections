@@ -116,9 +116,12 @@
                         <configuration>
                             <attach>true</attach>
                             <includeBaseDirectory>false</includeBaseDirectory>
-                            <descriptorRefs>
-                                <descriptorRef>kubernetes-application</descriptorRef>
-                            </descriptorRefs>
+                            <descriptors>
+                                <descriptor>src/main/resources/assemblies/micro-frontend.xml</descriptor>
+                            </descriptors>
+                            <!-- <descriptorRefs>
+                                <descriptorRef>micro-frontend</descriptorRef>
+                            </descriptorRefs> -->
                         </configuration>
                     </execution>
                 </executions>
@@ -126,41 +129,4 @@
         </plugins>
     </build>
 
-
-    <profiles>
-        <profile>
-            <id>shellcheck</id>
-            <activation>
-                <file>
-                    <exists>${basedir}/src/main/kubernetes/bin</exists>
-                </file>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.6.0</version>
-                        <executions>
-                            <execution>
-                                <id>validate-scripts</id>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <phase>compile</phase>
-                                <configuration>
-                                    <workingDirectory>${basedir}</workingDirectory>
-                                    <executable>bash</executable>
-                                    <arguments>
-                                        <argument>-c</argument>
-                                        <argument>shellcheck -e SC1117 ${basedir}/src/main/kubernetes/bin/*</argument>
-                                    </arguments>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>
