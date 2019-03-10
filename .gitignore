@@ -22,9 +22,13 @@ bower_dependencies
 *.iml
 .classpath
 .project
-.settings
+.settings/
+*/.settings/
 .vscode
 codeship.aes
+.factorypath
+*/bin/
+
 
 # release
 release.properties
