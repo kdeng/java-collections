@@ -101,7 +101,8 @@
     <module>maven-resouce-plugin-sample1</module>
     <module>micronaut-proxy-demo</module>
     <module>java-io-samples</module>
-    <module>spring-grpc-demo1</module>
+    <module>grpc-demo1</module>
+    <module>vertx-demo1</module>
   </modules>
 
   <build>
