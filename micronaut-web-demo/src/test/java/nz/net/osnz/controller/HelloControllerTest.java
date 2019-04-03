@@ -17,33 +17,33 @@ import static org.junit.Assert.assertNotNull;
  */
 public class HelloControllerTest {
 
-    private static EmbeddedServer server;
-    private static HttpClient client;
+  private static EmbeddedServer server;
+  private static HttpClient client;
 
-    @BeforeClass
-    public static void setupServer() {
-        server = ApplicationContext.run(EmbeddedServer.class);
-        client = server
-            .getApplicationContext()
-            .createBean(HttpClient.class, server.getURL());
-    }
+  @BeforeClass
+  public static void setupServer() {
+    server = ApplicationContext.run(EmbeddedServer.class);
+    client = server
+        .getApplicationContext()
+        .createBean(HttpClient.class, server.getURL());
+  }
 
-    @AfterClass
-    public static void stopServer() {
-        if (server != null) {
-            server.stop();
-        }
-        if (client != null) {
-            client.stop();
-        }
+  @AfterClass
+  public static void stopServer() {
+    if (server != null) {
+      server.stop();
     }
+    if (client != null) {
+      client.stop();
+    }
+  }
 
-    @Test
-    public void testHello() throws Exception {
-        HttpRequest request = HttpRequest.GET("/hello");
-        String body = client.toBlocking().retrieve(request);
-        assertNotNull(body);
-        assertEquals(body, "Hello world!");
-    }
+  @Test
+  public void testHello() throws Exception {
+    HttpRequest request = HttpRequest.GET("/hello");
+    String body = client.toBlocking().retrieve(request);
+    assertNotNull(body);
+    assertEquals(body, "Hello world!");
+  }
 
 }

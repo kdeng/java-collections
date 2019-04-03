@@ -10,7 +10,6 @@ import nz.net.osnz.services.HelloService;
 
 import javax.inject.Inject;
 import javax.validation.constraints.NotBlank;
-import java.awt.*;
 
 /**
  * @author Kefeng Deng (deng@51any.com)
@@ -19,19 +18,19 @@ import java.awt.*;
 @Validated
 public class HelloController {
 
-    @Inject
-    private HelloService helloService;
+  @Inject
+  private HelloService helloService;
 
-    @Get("/hello")
-    @Produces(PageAttributes.MediaType.TEXT_PLAIN)
-    public Single<String> helloWorld() {
-        return Single.just("Hello world!");
-    }
+  @Get("/hello")
+  @Produces(MediaType.TEXT_PLAIN)
+  public Single<String> helloWorld() {
+    return Single.just("Hello world!");
+  }
 
-    @Get("/hello/{name}")
-    @Produces(MediaType.TEXT_PLAIN)
-    public Single<String> hello(@NotBlank String name) {
-        return Single.just(helloService.hello(name));
-    }
+  @Get("/hello/{name}")
+  @Produces(MediaType.TEXT_PLAIN)
+  public Single<String> hello(@NotBlank String name) {
+    return Single.just(helloService.hello(name));
+  }
 
 }
