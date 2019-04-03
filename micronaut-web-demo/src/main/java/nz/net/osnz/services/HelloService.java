@@ -1,6 +1,6 @@
 package nz.net.osnz.services;
 
-import javax.inject.Singleton;
+
 
 /**
  * @author Kefeng Deng (deng@51any.com)

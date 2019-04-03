@@ -10,6 +10,7 @@ import nz.net.osnz.services.HelloService;
 
 import javax.inject.Inject;
 import javax.validation.constraints.NotBlank;
+import java.awt.*;
 
 /**
  * @author Kefeng Deng (deng@51any.com)
@@ -22,7 +23,7 @@ public class HelloController {
     private HelloService helloService;
 
     @Get("/hello")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(PageAttributes.MediaType.TEXT_PLAIN)
     public Single<String> helloWorld() {
         return Single.just("Hello world!");
     }
