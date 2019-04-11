@@ -2,109 +2,98 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-    	<groupId>io.osnz.demos</groupId>
-    	<artifactId>java-tutorials</artifactId>
-    	<version>1</version>
-    	<relativePath>../pom.xml</relativePath>
-    </parent>
+  <groupId>nz.net.osnz.demos</groupId>
+  <artifactId>spring-boot-data-ebean</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
-	<artifactId>spring-boot-data-ebean</artifactId>
-	<version>1.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+  <name>spring-boot-data-ebean</name>
 
-	<name>spring-boot-data-ebean</name>
+  <properties>
+    <java.version>1.8</java.version>
+    <sonar.language>java</sonar.language>
+  </properties>
 
-	<properties>
-		<java.version>1.8</java.version>
-		<sonar.language>java</sonar.language>
-	</properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>nz.net.osnz.composite</groupId>
+        <artifactId>composite-osnz-pom</artifactId>
+        <version>[1,2)</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
-	<dependencies>
+  <dependencies>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.common</groupId>
+      <artifactId>common-jackson</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>nz.net.osnz.composite</groupId>
-			<artifactId>composite-spring</artifactId>
-			<version>${composite-spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>nz.net.osnz.common</groupId>
-			<artifactId>common-jackson</artifactId>
-			<version>${common-jackson.version}</version>
-		</dependency>
+    <!-- database section start -->
+    <!--<dependency>-->
+    <!--<groupId>org.hsqldb</groupId>-->
+    <!--<artifactId>hsqldb</artifactId>-->
+    <!--<version>2.4.0</version>-->
+    <!--<scope>test</scope>-->
+    <!--</dependency>-->
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.196</version>
+      <scope>test</scope>
+    </dependency>
 
-		<!-- database section start -->
-		<!--<dependency>-->
-			<!--<groupId>org.hsqldb</groupId>-->
-			<!--<artifactId>hsqldb</artifactId>-->
-			<!--<version>2.4.0</version>-->
-			<!--<scope>test</scope>-->
-		<!--</dependency>-->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.196</version>
-			<scope>test</scope>
-		</dependency>
+    <dependency>
+      <groupId>nz.net.osnz.common</groupId>
+      <artifactId>common-ebean</artifactId>
+    </dependency>
 
+    <!-- logging section -->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-logging</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>nz.net.osnz.common</groupId>
-			<artifactId>common-ebean</artifactId>
-			<version>[9.7,10)</version>
-		</dependency>
+    <!-- unit test -->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-test</artifactId>
+      <scope>test</scope>
+    </dependency>
 
-		<!-- logging section -->
-		<dependency>
-			<groupId>nz.net.osnz.composite</groupId>
-			<artifactId>composite-logging</artifactId>
-			<version>${composite-logging.version}</version>
-		</dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-jdbc</artifactId>
+      <scope>test</scope>
+    </dependency>
 
-		<!-- unit test -->
-		<dependency>
-			<groupId>nz.net.osnz.composite</groupId>
-			<artifactId>composite-spring-test</artifactId>
-			<version>${composite-spring-test.version}</version>
-			<scope>test</scope>
-		</dependency>
+  </dependencies>
 
-		<dependency>
-			<groupId>nz.net.osnz.composite</groupId>
-			<artifactId>composite-spring-jdbc</artifactId>
-			<version>[5.5,6)</version>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-core</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>io.repaint.maven</groupId>
-				<artifactId>tiles-maven-plugin</artifactId>
-				<version>${tiles-maven-plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<filtering>false</filtering>
-					<tiles>
-						<tile>io.osnz.tiles:java-tile:[1.5,2)</tile>
-					</tiles>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.repaint.maven</groupId>
+        <artifactId>tiles-maven-plugin</artifactId>
+        <version>2.13</version>
+        <extensions>true</extensions>
+        <configuration>
+          <filtering>false</filtering>
+          <tiles>
+            <tile>io.osnz.tiles:java-tile:[1.7,2)</tile>
+            <tile>io.ebean.tile:enhancement:7.4</tile>
+          </tiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>

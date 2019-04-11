@@ -1,0 +1,2 @@
+entity-packages: net.osnz.module.user
+transactional-packages: net.osnz.module

@@ -14,62 +14,28 @@ import java.util.List;
 @SuppressWarnings("unused")
 public final class UserRepository {
 
-    private final static Logger log = LoggerFactory.getLogger(UserRepository.class);
+  private final static Logger log = LoggerFactory.getLogger(UserRepository.class);
 
-//  private final static String QUERY_GET = "SELECT * FROM User WHERE id=?";
-//
-//  private final static String QUERY_FINDALL = "SELECT * FROM User";
+  @Autowired
+  private EbeanServer ebeanServer;
 
-    @Autowired
-    private EbeanServer ebeanServer;
+  public final User get(Long id) {
+    return ebeanServer.find(User.class, id);
+  }
 
-//	@PostConstruct
-//	public void postConstruct() {
-//		try {
-//			ServerConfig serverConfig = new ServerConfig();
-//			serverConfig.setName("osnz");
-//
-//			//dataSource.getConnection().setAutoCommit(false);
-//
-//			serverConfig.setDataSource(dataSource);
-//
-//			serverConfig.setDefaultServer(true);
-//			serverConfig.setRegister(true);
-//
-//			serverConfig.setDdlGenerate(false);
-//			serverConfig.setDdlRun(false);
-////      serverConfig.setLoggingLevel(LogLevel.valueOf("DEBUG"));
-////      serverConfig.setDebugSql(true);
-////      serverConfig.setLoggingToJavaLogger(true);
-//			serverConfig.addPackage("net.osnz.module.user.domain");
-//
-////      serverConfig.addClass(User.class);
-//
-//			this.ebeanServer = EbeanServerFactory.create(serverConfig);
-//
-//			log.debug("User Repository Bean is ready");
-//		} catch (Exception ex) {
-//			log.error("Failed to create ebeanTemplate", ex);
-//		}
-//	}
+  public List<User> findAll() {
+    return ebeanServer.find(User.class).findList();
+  }
 
-    public final User get(Long id) {
-        return ebeanServer.find(User.class, id);
+  public Long save(User user) {
+    Long userId = null;
+    try {
+      ebeanServer.save(user);
+      userId = user.getId();
+    } catch (Exception ex) {
+      log.error("Failed to save user : " + user.getMobile(), ex);
     }
-
-    public List<User> findAll() {
-        return ebeanServer.find(User.class).findList();
-    }
-
-    public Long save(User user) {
-        Long userId = null;
-        try {
-            ebeanServer.save(user);
-            userId = user.getId();
-        } catch (Exception ex) {
-            log.error("Failed to save user : " + user.getMobile(), ex);
-        }
-        return userId;
-    }
+    return userId;
+  }
 
 }

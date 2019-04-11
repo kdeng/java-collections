@@ -67,10 +67,10 @@ public class UserRepositoryTest {
         user.setTotalExpense(new BigDecimal("12.33"));
         userRepository.save(user);
 
-        List<User> allUesrs = userRepository.findAll();
+        List<User> allUsers = userRepository.findAll();
 
 
-        Assert.assertEquals(5, allUesrs.size());
+        Assert.assertEquals(5, allUsers.size());
 
     }
 

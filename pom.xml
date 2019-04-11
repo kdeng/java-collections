@@ -104,6 +104,8 @@
     <module>grpc-demo1</module>
     <module>vertx-demo1</module>
     <module>spring-web-security</module>
+    <module>spring-boot-rxjava2-demo</module>
+    <module>spring-boot-data-jpa</module>
   </modules>
 
   <build>
