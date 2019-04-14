@@ -16,7 +16,7 @@
     <java.version>1.8</java.version>
   </properties>
 
-  <dependencyManagement>
+  <!-- <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>nz.net.osnz.composite</groupId>
@@ -26,7 +26,7 @@
         <scope>import</scope>
       </dependency>
     </dependencies>
-  </dependencyManagement>
+  </dependencyManagement> -->
 
   <dependencies>
     <!-- RxJava2 -->
@@ -39,6 +39,7 @@
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-unit-test</artifactId>
+      <version>[6,7)</version>
       <scope>test</scope>
     </dependency>
 
