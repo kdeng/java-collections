@@ -106,6 +106,7 @@
     <module>spring-web-security</module>
     <module>spring-boot-rxjava2-demo</module>
     <module>spring-boot-data-jpa</module>
+    <module>jersey-netty-demo</module>
   </modules>
 
   <build>
