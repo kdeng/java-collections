@@ -1,0 +1,126 @@
+openapi: '3.0.0'
+
+info:
+  version: 1.0.0
+  title: Swagger demo
+  description: swagger demo
+
+servers:
+  - url: http://localhost:8080/v1
+    description: swagger demo
+
+tags:
+  - name: Customers
+    description: Everything about customer details
+
+paths:
+  /customer/{primaryId}:
+    summary: Represents customer details
+    description: >-
+      This resource represents a customer record
+    get:
+      summary: Find a customer record
+      operationId: getCustomerById
+      tags:
+        - Customers
+      description: >-
+        Retrieves a customer record by customer id
+      parameters:
+        - name: primaryId
+          in: path
+          description: customer primary id
+          required: true
+          allowEmptyValue: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: >-
+            Found a customer by primary ID
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+        '400':
+          description: >-
+            Invalid primary ID
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                type: 'about:blank'
+                title: Invalid primary ID
+                detail: "Cannot find a customer by invalid primary ID"
+                status: '400'
+        '404':
+          description: >-
+            No customer could be found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                type: 'about:blank'
+                title: Customer not found
+                detail: >-
+                  No customer could by found.
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+
+    Customer:
+      type: object
+      properties:
+        primaryId:
+          type: string
+        preferredName:
+          type: string
+        customerTip:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        addressres:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerFullAddress'
+
+    CustomerFullAddress:
+      type: object
+      properties:
+        primaryID:
+          type: string
+        ownerID:
+          type: string
+        propertyName:
+          type: string
+        streetNumber:
+          type: string
+        streetName:
+          type: string
+        suburb:
+          type: string
+        city:
+          type: string
+        countryCode:
+          type: string
+        postCode:
+          type: string
+

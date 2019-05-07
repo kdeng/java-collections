@@ -6,107 +6,34 @@
   <parent>
     <groupId>nz.net.osnz.parent</groupId>
     <artifactId>central-parent</artifactId>
-    <version>6.1</version>
+    <version>6.2</version>
   </parent>
 
   <groupId>io.osnz.demos</groupId>
-  <artifactId>java-tutorials</artifactId>
+  <artifactId>java-demos</artifactId>
   <version>1</version>
   <packaging>pom</packaging>
 
-  <name>java-tutorials</name>
-  <description>java-tutorials</description>
+  <name>java-demos</name>
+  <description>java-demos</description>
 
-  <url>https://github.com/kdeng/java-tutorials</url>
+  <url>https://github.com/kdeng/java-demos</url>
 
-  <properties>
-    <java.version>1.8</java.version>
-    <spring-boot.version>2.1.3.RELEASE</spring-boot.version>
-    <tiles-maven-plugin.version>2.13</tiles-maven-plugin.version>
-    <kotlin.version>[1.3.21]</kotlin.version>
-
-    <spring-webflux.version>[5.1.6.RELEASE]</spring-webflux.version>
-
-    <composite-groovy.version>[4.7,5)</composite-groovy.version>
-    <composite-spring.version>[5.5,6)</composite-spring.version>
-    <composite-spring-mvc.version>[5.5,6)</composite-spring-mvc.version>
-    <composite-spring-boot.version>[2.6,3)</composite-spring-boot.version>
-    <composite-spring-boot-jetty.version>[2.7,3)</composite-spring-boot-jetty.version>
-    <composite-spring-boot-tomcat.version>[2.7,3)</composite-spring-boot-tomcat.version>
-    <composite-spring-boot-undertow.version>[2.3,3)</composite-spring-boot-undertow.version>
-    <composite-logging.version>[4.4,5)</composite-logging.version>
-    <composite-spring-boot-test.version>[2.3,3)</composite-spring-boot-test.version>
-    <composite-spring-test.version>[5.5,6)</composite-spring-test.version>
-    <composite-spring-boot-devtools.version>[2.3,3)</composite-spring-boot-devtools.version>
-    <common-jackson.version>[2.1,3)</common-jackson.version>
-
-  </properties>
 
   <modules>
-    <!-- Kotlin-based Demos -->
     <module>kotlin-demo</module>
-    <!-- Spring -->
-    <module>spring-websocket-jetty</module>
 
-    <!-- Spring Batch Demos -->
-    <module>spring-boot-batch</module>
-
-    <!-- Spring MVC -->
-    <!-- <module>spring-boot-mvc-extjs</module> --> <!-- TODO -->
-    <module>spring-boot-mvc-j2ee</module>
-    <module>spring-boot-mvc-templates</module>
-    <module>spring-boot-mvc-thymeleaf</module>
-    <module>spring-boot-mvc-crud-api</module>
-
-    <!--<module>spring-extjs</module>-->
-    <module>spring-boot-reactor</module>
-    <module>spring-boot-session</module>
-    <module>spring-boot-webflux</module>
-
-    <!-- Spring Security -->
-    <module>spring-security-oauth</module>
-
-    <!-- Spring Web Service -->
-    <module>spring-boot-ws</module>
-    <module>spring-boot-ws-cxf</module>
-
-    <!-- Spring Data related -->
-    <module>spring-boot-data-ebean</module>
-    <module>spring-boot-data-mongodb</module>
-
-    <!-- Spring RxJava -->
-    <module>spring-boot-rxjava</module>
-
-    <!-- Other -->
-    <module>maven-plugin-demo</module>
-
-    <!-- Java 8 -->
-    <module>java8-concurrent</module>
-    <module>java8-spi</module>
-    <module>java8-thread-pool</module>
-
-    <!-- Spring boot JMS -->
-    <module>spring-boot-jms</module>
-    <module>spring-boot-jms-activemq</module>
-    <module>spring-boot-jms-rabbitmq</module>
-    <module>spring-boot-appengine-demo</module>
-
-    <!-- GraphQL related -->
-    <module>spring-boot-graphql</module>
-    <module>spring-boot-jib-demo</module>
-    <module>micronaut-web-demo</module>
-    <module>spring-boot-cucumber</module>
-    <module>spring-boot-async-sample</module>
+    <module>java-concurrent</module>
+    <module>java-spi-sample</module>
     <module>java-file-operations</module>
-    <module>maven-resouce-plugin-sample1</module>
-    <module>micronaut-proxy-demo</module>
     <module>java-io-samples</module>
-    <module>grpc-demo1</module>
-    <module>vertx-demo1</module>
-    <module>spring-web-security</module>
-    <module>spring-boot-rxjava2-demo</module>
-    <module>spring-boot-data-jpa</module>
-    <module>jersey-netty-demo</module>
+
+    <module>maven-plugin-demo</module>
+    <module>maven-resouce-plugin-sample1</module>
+
+    <module>java-grpc-demo</module>
+    <module>swagger-codegen-demo1</module>
+
   </modules>
 
   <build>

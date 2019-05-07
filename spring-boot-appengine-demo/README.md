@@ -1,1 +1,0 @@
-# Flexiable AppEngine Sample based on Spring Boot

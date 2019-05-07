@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>nz.net.osnz.demos</groupId>
+  <artifactId>swagger-codegen-demo1-reactor</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>swagger-codegen-demo1</name>
+  <description>swagger-codegen-demo1</description>
+  <url>https://github.com/kdeng/swagger-codegen-demo1</url>
+
+  <modules>
+    <module>demo1-api</module>
+    <module>demo1-service</module>
+  </modules>
+</project>
