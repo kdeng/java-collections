@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>nz.net.osnz</groupId>
+  <artifactId>maven-tile-deployer</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>maven-tile-deployer</name>
+  <description>maven-tile-deployer</description>
+  <url>https://github.com/kdeng/maven-tile-deployer</url>
+
+  <!-- <dependencies>
+    <dependency>
+      <groupId>nz.net.osnz</groupId>
+      <artifactId>maven-tile-builder</artifactId>
+      <version>[1,2)</version>
+      <type>zip</type>
+    </dependency>
+  </dependencies> -->
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.1.1</version>
+        <executions>
+          <execution>
+            <id>unpack</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>nz.net.osnz</groupId>
+                  <artifactId>maven-tile-builder</artifactId>
+                  <version>1.1-SNAPSHOT</version>
+                  <type>zip</type>
+                  <classifier>bin-application</classifier>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${project.build.directory}/bin</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+              <overWriteReleases>false</overWriteReleases>
+              <overWriteSnapshots>true</overWriteSnapshots>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <configuration>
+              <tasks>
+                <exec executable="${project.build.directory}/bin/cat">
+                  <arg value="${project.build.directory}/classes/data.txt"/>
+                </exec>
+                <!-- <exec executable="my2.sh">
+                  <arg value="input2"/>
+                </exec> -->
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
