@@ -10,30 +10,23 @@
   </parent>
 
   <groupId>io.osnz.demos</groupId>
-  <artifactId>java-demos</artifactId>
+  <artifactId>java-tutorials</artifactId>
   <version>1</version>
   <packaging>pom</packaging>
 
-  <name>java-demos</name>
-  <description>java-demos</description>
+  <name>java-tutorials</name>
+  <description>java-tutorials</description>
 
-  <url>https://github.com/kdeng/java-demos</url>
-
+  <url>https://github.com/kdeng/java-tutorials</url>
 
   <modules>
-    <module>kotlin-demo</module>
-
-    <module>java-concurrent</module>
-    <module>java-spi-sample</module>
-    <module>java-file-operations</module>
-    <module>java-io-samples</module>
-
-    <module>maven-plugin-demo</module>
-    <module>maven-resouce-plugin-sample1</module>
-
-    <module>java-grpc-demo</module>
-    <module>swagger-codegen-demo1</module>
-    <module>java-jvm</module>
+    <module>java-demos</module>
+    <module>jersey-demos</module>
+    <module>micronaut-demos</module>
+    <module>netty-demos</module>
+    <module>spring-demos</module>
+    <module>kotlin-demos</module>
+    <module>vertx-demos</module>
   </modules>
 
   <build>

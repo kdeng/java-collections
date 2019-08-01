@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.osnz.demos</groupId>
+  <artifactId>spring-data-ebean</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>spring-data-ebean</name>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <sonar.language>java</sonar.language>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring</artifactId>
+      <version>[5,6)</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.common</groupId>
+      <artifactId>common-jackson</artifactId>
+      <version>[2,3)</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.196</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>nz.net.osnz.common</groupId>
+      <artifactId>common-ebean</artifactId>
+      <version>[9,10)</version>
+    </dependency>
+
+    <!-- logging section -->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-logging</artifactId>
+      <version>[4,5)</version>
+    </dependency>
+
+    <!-- unit test -->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-test</artifactId>
+      <version>[5,6)</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-jdbc</artifactId>
+      <version>[5,6)</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.repaint.maven</groupId>
+        <artifactId>tiles-maven-plugin</artifactId>
+        <version>2.13</version>
+        <extensions>true</extensions>
+        <configuration>
+          <filtering>false</filtering>
+          <tiles>
+            <tile>io.osnz.tiles:java-tile:[1.7,2)</tile>
+            <tile>io.ebean.tile:enhancement:7.4</tile>
+          </tiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

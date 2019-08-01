@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.osnz.demos</groupId>
+  <artifactId>spring-mvc-graphql</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>spring-mvc-graphql</name>
+  <description>spring-mvc-graphql</description>
+  <url>https://github.com/kdeng/spring-demos/spring-mvc-graphql</url>
+
+  <dependencies>
+
+    <!-- GraphQL Java -->
+    <dependency>
+      <groupId>com.graphql-java-kickstart</groupId>
+      <artifactId>graphql-spring-boot-starter</artifactId>
+      <version>[5.8.1]</version>
+      <exclusions>
+        <exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-core</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-annotations</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- to embed GraphiQL tool -->
+    <dependency>
+      <groupId>com.graphql-java-kickstart</groupId>
+      <artifactId>altair-spring-boot-starter</artifactId>
+      <version>[5.8.1]</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.graphql-java-kickstart</groupId>
+      <artifactId>graphiql-spring-boot-starter</artifactId>
+      <version>[5.8.1]</version>
+      <scope>runtime</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- core dependencies -->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-mvc</artifactId>
+      <version>[5.9]</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot</artifactId>
+      <version>[2.12]</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot-undertow</artifactId>
+      <version>[2,3)</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-logging</artifactId>
+      <version>[4.7]</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.common</groupId>
+      <artifactId>common-jackson</artifactId>
+      <version>[2.1]</version>
+    </dependency>
+
+    <!--test scope-->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot-test</artifactId>
+      <version>[2.9]</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-test</artifactId>
+      <version>[5.9]</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- spring boot devtools -->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot-devtools</artifactId>
+      <version>[2.9]</version>
+      <optional>true</optional>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>io.repaint.maven</groupId>
+        <artifactId>tiles-maven-plugin</artifactId>
+        <version>2.13</version>
+        <extensions>true</extensions>
+        <configuration>
+          <filtering>false</filtering>
+          <tiles>
+            <tile>io.osnz.tiles:java-tile:[1.5,2)</tile>
+          </tiles>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>2.1.4.RELEASE</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>

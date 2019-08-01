@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>nz.net.osnz.parent</groupId>
+    <artifactId>central-parent</artifactId>
+    <version>6.2</version>
+  </parent>
+
+  <groupId>io.osnz.demos</groupId>
+  <artifactId>spring-demos-reactor</artifactId>
+  <version>1</version>
+  <packaging>pom</packaging>
+
+  <name>spring-demos-reactor</name>
+  <description>spring-demos-reactor</description>
+
+  <modules>
+    <module>spring-batch-demo</module>
+    <module>spring-boot-appengine-demo</module>
+    <module>spring-boot-jib-demo</module>
+    <module>spring-boot-reactor</module>
+    <module>spring-boot-rxjava</module>
+    <module>spring-data-ebean</module>
+    <module>spring-data-jpa</module>
+    <module>spring-data-mongodb</module>
+    <module>spring-jms-activemq</module>
+    <module>spring-jms-demo</module>
+    <module>spring-jms-rabbitmq</module>
+    <module>spring-mvc-crud-api</module>
+    <module>spring-mvc-j2ee</module>
+    <module>spring-mvc-templates</module>
+    <module>spring-mvc-thymeleaf</module>
+    <module>spring-mvc-graphql</module>
+    <module>spring-security-oauth</module>
+    <module>spring-web-security</module>
+    <module>spring-webflux-demo</module>
+    <module>spring-webservice-cxf</module>
+    <module>spring-websocket-jetty</module>
+  </modules>
+
+</project>

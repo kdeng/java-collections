@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.osnz.demos</groupId>
+  <artifactId>spring-boot-appengine-demo</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>spring-boot-appengine-demo</name>
+  <description>spring-boot-appengine-demo</description>
+  <url>https://github.com/kdeng/spring-demos/spring-boot-appengine-demo</url>
+
+  <properties>
+    <appengine.app.id>stuff-data-report-etl-dev</appengine.app.id>
+    <appengine.app.version>1</appengine.app.version>
+    <appengine.sdk.version>1.9.63</appengine.sdk.version>
+    <guava.version>20.0</guava.version>
+    <jsr107cache.version>1.1</jsr107cache.version>
+    <jstl.version>1.2</jstl.version>
+
+    <appengine-maven-plugin.version>1.3.2</appengine-maven-plugin.version>
+    <versions-maven-plugin.version>2.5</versions-maven-plugin.version>
+    <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
+
+    <java.version>1.8</java.version>
+
+  </properties>
+
+  <dependencies>
+
+    <!-- Groovy compiler -->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-groovy</artifactId>
+      <version>[5.2]</version>
+    </dependency>
+
+    <!-- AppEngine runtime -->
+    <!--<dependency>-->
+    <!--<groupId>com.google.appengine</groupId>-->
+    <!--<artifactId>appengine-api-1.0-sdk</artifactId>-->
+    <!--<version>${appengine.sdk.version}</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+    <!--<groupId>com.google.appengine</groupId>-->
+    <!--<artifactId>appengine-jsr107cache</artifactId>-->
+    <!--<version>${appengine.sdk.version}</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+    <!--<groupId>net.sf.jsr107cache</groupId>-->
+    <!--<artifactId>jsr107cache</artifactId>-->
+    <!--<version>${jsr107cache.version}</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+    <!--<groupId>jstl</groupId>-->
+    <!--<artifactId>jstl</artifactId>-->
+    <!--<version>${jstl.version}</version>-->
+    <!-- </dependency> -->
+
+    <!-- core dependencies -->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-mvc</artifactId>
+      <version>[5.9]</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot</artifactId>
+      <version>[2.12]</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot-tomcat</artifactId>
+      <version>[2.8]</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-logging</artifactId>
+      <version>[4.7]</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.common</groupId>
+      <artifactId>common-jackson</artifactId>
+      <version>[2.1]</version>
+    </dependency>
+    <!-- test scope -->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot-test</artifactId>
+      <version>[2.9]</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-test</artifactId>
+      <version>[5.9]</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- spring boot devtools -->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot-devtools</artifactId>
+      <version>[2.9]</version>
+      <optional>true</optional>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>io.repaint.maven</groupId>
+        <artifactId>tiles-maven-plugin</artifactId>
+        <version>2.13</version>
+        <extensions>true</extensions>
+        <configuration>
+          <filtering>false</filtering>
+          <tiles>
+            <tile>io.osnz.tiles:groovy-tile:[1.7,2)</tile>
+          </tiles>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>2.1.4.RELEASE</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- [START cloudplugin] -->
+      <!--<plugin>-->
+      <!--<groupId>com.google.cloud.tools</groupId>-->
+      <!--<artifactId>appengine-maven-plugin</artifactId>-->
+      <!--<version>${appengine-maven-plugin.version}</version>-->
+      <!--<configuration>-->
+      <!--<version>${appengine.app.version}</version>-->
+      <!--<project>${appengine.app.id}</project>-->
+      <!--<devserver.host>localhost</devserver.host>-->
+      <!--<devserver.port>9090</devserver.port>-->
+      <!--</configuration>-->
+      <!--&lt;!&ndash;<configuration>&ndash;&gt;-->
+      <!--&lt;!&ndash;<pro&ndash;&gt;-->
+      <!--&lt;!&ndash;</configuration>&ndash;&gt;-->
+      <!--</plugin>-->
+      <!-- [END cloudplugin] -->
+    </plugins>
+  </build>
+
+</project>

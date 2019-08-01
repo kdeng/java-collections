@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>nz.net.osnz.parent</groupId>
+    <artifactId>central-parent</artifactId>
+    <version>6.2</version>
+  </parent>
+
+  <groupId>io.osnz.demos</groupId>
+  <artifactId>netty-demos-reactor</artifactId>
+  <version>1</version>
+  <packaging>pom</packaging>
+
+  <name>netty-demos-reactor</name>
+  <description>netty-demos-reactor</description>
+
+  <url>https://github.com/kdeng/netty-demos</url>
+
+  <modules>
+    <module>netty-demo1</module>
+    <module>spark-netty-demo1</module>
+    <module>netty-channel-demo1</module>
+    <module>netty-swagger-demo</module>
+  </modules>
+
+</project>

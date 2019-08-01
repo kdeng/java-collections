@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.osnz.demos.netty</groupId>
+  <artifactId>netty-swagger-server-demo</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>netty-swagger-server-demo</name>
+  <description>netty-swagger-server-demo</description>
+  <url>https://github.com/kdeng/netty-swagger-server-demo</url>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <spring-boot.version>2.0.5.RELEASE</spring-boot.version>
+  </properties>
+
+  <dependencies>
+
+    <!-- api -->
+    <dependency>
+      <groupId>io.osnz.demos.netty</groupId>
+      <artifactId>netty-swagger-api-demo</artifactId>
+      <version>[1,2)</version>
+    </dependency>
+
+    <!-- connect utils -->
+    <dependency>
+      <groupId>cd.connect.common</groupId>
+      <artifactId>connect-app-lifecycle</artifactId>
+      <version>[1.1, 2)</version>
+    </dependency>
+    <dependency>
+      <groupId>cd.connect.jersey</groupId>
+      <artifactId>jersey-common</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.bluetrainsoftware.bathe.initializers</groupId>
+      <artifactId>system-property-loader</artifactId>
+      <version>[3.1]</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- bathe runner & bathe booter -->
+    <dependency>
+      <groupId>com.bluetrainsoftware.bathe</groupId>
+      <artifactId>bathe-booter</artifactId>
+      <version>[3.2,4)</version>
+    </dependency>
+
+    <!-- jackson helper dependency -->
+    <dependency>
+      <groupId>nz.net.osnz.common</groupId>
+      <artifactId>common-jackson</artifactId>
+      <version>[2.1]</version>
+      <exclusions>
+        <!-- exclude everything to decouple the dependencies -->
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- jersey + netty + hk2 dependencies -->
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-json-jackson</artifactId>
+      <version>[2.28]</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-common</artifactId>
+      <version>[2.28]</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.inject</groupId>
+      <artifactId>jersey-hk2</artifactId>
+      <version>[2.28]</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-netty-http</artifactId>
+      <version>[2.28]</version>
+      <exclusions>
+        <exclusion>
+          <groupId>io.netty</groupId>
+          <artifactId>netty-all</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-all</artifactId>
+      <version>[4.1.34.Final]</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>[2.6]</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>[3.9]</version>
+    </dependency>
+
+    <!-- logging dependencies for bridging common logger by using log4j2 -->
+    <dependency>
+      <groupId>cd.connect.common</groupId>
+      <artifactId>connect-java-logging-log4j2</artifactId>
+      <version>[1.2,2)</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jul-to-slf4j</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.bluetrainsoftware.bathe.initializers</groupId>
+      <artifactId>jul-bridge</artifactId>
+      <version>[2.1]</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <version>[1.8.0-beta4]</version>
+    </dependency>
+
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.repaint.maven</groupId>
+        <artifactId>tiles-maven-plugin</artifactId>
+        <version>2.14</version>
+        <extensions>true</extensions>
+        <configuration>
+          <filtering>false</filtering>
+          <tiles>
+            <tile>io.osnz.tiles:java-tile:[1,2)</tile>
+          </tiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.osnz.demos</groupId>
+  <artifactId>jersey-websocket-netty</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>jersey-websocket-netty</name>
+  <description>jersey-websocket-netty</description>
+  <url>https://github.com/kdeng/netty-demos/jersey-websocket-netty</url>
+
+  <properties>
+    <java.version>1.8</java.version>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>cd.connect.composites.java</groupId>
+      <artifactId>connect-composite-jersey</artifactId>
+      <version>[1.3]</version>
+    </dependency>
+
+    <dependency>
+      <groupId>cd.connect.openapi.gensupport</groupId>
+      <artifactId>openapi-generator-support</artifactId>
+      <version>[1.1]</version>
+    </dependency>
+
+    <!-- lombok to reduce the code -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.6</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- connect utils -->
+    <dependency>
+      <groupId>cd.connect.common</groupId>
+      <artifactId>connect-app-lifecycle</artifactId>
+      <version>[1.1,2)</version>
+    </dependency>
+    <dependency>
+      <groupId>cd.connect.jersey</groupId>
+      <artifactId>jersey-common</artifactId>
+      <version>[1.1]</version>
+    </dependency>
+    <!-- un-comment this dependency to enable JsonLogEnhancer, which allows to pretty Log message in JSON format -->
+    <!--    <dependency>-->
+    <!--      <groupId>cd.connect.servlet</groupId>-->
+    <!--      <artifactId>servlet-spring-jersey</artifactId>-->
+    <!--      <version>[1.12]</version>-->
+    <!--    </dependency>-->
+    <dependency>
+      <groupId>com.bluetrainsoftware.bathe.initializers</groupId>
+      <artifactId>system-property-loader</artifactId>
+      <version>[3.1]</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>cd.connect.common</groupId>
+      <artifactId>connect-app-declare-config</artifactId>
+      <version>[1.1,2)</version>
+    </dependency>
+
+    <!-- jackson helper dependency -->
+    <dependency>
+      <groupId>nz.net.osnz.common</groupId>
+      <artifactId>common-jackson</artifactId>
+      <version>[2.1]</version>
+      <exclusions>
+        <!-- exclude everything to decouple the dependencies -->
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- jersey + netty + hk2 dependencies -->
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-json-jackson</artifactId>
+      <version>[2.28]</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-common</artifactId>
+      <version>[2.28]</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.inject</groupId>
+      <artifactId>jersey-hk2</artifactId>
+      <version>[2.28]</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-netty-http</artifactId>
+      <version>[2.28]</version>
+      <exclusions>
+        <exclusion>
+          <groupId>io.netty</groupId>
+          <artifactId>netty-all</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-all</artifactId>
+      <version>[4.1.34.Final]</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>[3.9]</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
+<!--    <dependency>-->
+<!--      <groupId>org.yaml</groupId>-->
+<!--      <artifactId>snakeyaml</artifactId>-->
+<!--      <version>[1.24]</version>-->
+<!--    </dependency>-->
+
+
+    <!-- logging dependencies for bridging common logger by using log4j2 -->
+    <dependency>
+      <groupId>cd.connect.common</groupId>
+      <artifactId>connect-java-logging-log4j2</artifactId>
+      <version>[1.2,2)</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jul-to-slf4j</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.bluetrainsoftware.bathe.initializers</groupId>
+      <artifactId>jul-bridge</artifactId>
+      <version>[2.1]</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <version>[1.8.0-beta4]</version>
+    </dependency>
+
+    <!-- bathe runner & bathe booter -->
+    <dependency>
+      <groupId>com.bluetrainsoftware.bathe</groupId>
+      <artifactId>bathe-booter</artifactId>
+      <version>[3.2,4)</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13-beta-2</version>
+      <scope>test</scope>
+    </dependency>
+
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.repaint.maven</groupId>
+        <artifactId>tiles-maven-plugin</artifactId>
+        <version>2.13</version>
+        <extensions>true</extensions>
+        <configuration>
+          <filtering>false</filtering>
+          <tiles>
+            <tile>io.osnz.tiles:java-tile:[1,2)</tile>
+          </tiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

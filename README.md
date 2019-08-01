@@ -71,6 +71,3 @@ Personally, I only use IntelliJ for JVM development.
 
 ## Builds
 I am using codeship to build this repository.
-
-
-

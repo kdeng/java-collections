@@ -1,0 +1,45 @@
+### Server Settings
+server:
+  port: 9000
+  undertow:
+    io-threads: 15
+    worker-threads: 150
+
+    accesslog:
+      enabled: true
+  compression:
+    enabled: true
+    mime-types: text/xml, text/css, text/html, application/json
+    min-response-size: 4096
+
+graphql:
+  servlet:
+    mapping: /graphql
+    enabled: true
+    corsEnabled: true
+    # if you want to @ExceptionHandler annotation for custom GraphQLErrors
+    exception-handlers-enabled: true
+  tools:
+    # schema-location-pattern: "**/*.graphqls"
+    schema-location-pattern: "graphql/*.graphqls"
+    # Enable or disable the introspection query. Disabling it puts your server in contravention of the GraphQL
+    # specification and expectations of most clients, so use this option with caution
+    introspection-enabled: true
+
+graphiql:
+  mapping: /graphiql
+  endpoint:
+    graphql: /graphql
+    subscriptions: /subscriptions
+  subscriptions:
+    timeout: 30
+    reconnect: false
+  enabled: true
+  pageTitle: GraphiQL
+  cdn:
+    enabled: false
+    version: 0.11.11
+
+spring:
+  application:
+    name: spring-boot-graphql-app

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.osnz.demos.netty</groupId>
+  <artifactId>netty-swagger-demo-reactor</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>netty-swagger-demo</name>
+  <description>netty-swagger-demo</description>
+  <url>https://github.com/kdeng/netty-swagger-demo</url>
+
+  <modules>
+    <module>netty-swagger-client-demo</module>
+    <module>netty-swagger-server-demo</module>
+    <module>netty-swagger-api-demo</module>
+  </modules>
+
+
+</project>

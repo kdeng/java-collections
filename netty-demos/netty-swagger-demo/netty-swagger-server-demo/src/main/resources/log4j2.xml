@@ -1,0 +1,15 @@
+<Configuration packages="cd.connect.logging" monitorInterval="30" verbose="true">
+  <Appenders>
+    <Console name="STDOUT" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%thread] %-5level %c{5} - %msg%n"/>
+    </Console>
+  </Appenders>
+
+  <Loggers>
+    <AsyncLogger name="io.osnz.demos.netty" level="debug"/>
+    <AsyncLogger name="jersey-logging" level="info" />
+    <AsyncRoot level="info">
+      <AppenderRef ref="STDOUT"/>
+    </AsyncRoot>
+  </Loggers>
+</Configuration>

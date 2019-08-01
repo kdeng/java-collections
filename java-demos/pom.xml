@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>nz.net.osnz.parent</groupId>
+    <artifactId>central-parent</artifactId>
+    <version>6.2</version>
+  </parent>
+
+  <groupId>io.osnz.demos</groupId>
+  <artifactId>java-demos-reactor</artifactId>
+  <version>1</version>
+  <packaging>pom</packaging>
+
+  <name>java-demos-reactor</name>
+  <description>java-demos-reactor</description>
+
+  <modules>
+    <module>java-concurrent</module>
+    <module>java-spi-sample</module>
+    <module>java-file-operations</module>
+    <module>java-io-samples</module>
+
+    <module>maven-plugin-demo</module>
+    <module>maven-resouce-plugin-sample1</module>
+
+    <module>java-grpc-demo</module>
+    <module>swagger-codegen-demo1</module>
+    <module>java-jvm</module>
+    <module>java-jwt</module>
+  </modules>
+
+</project>

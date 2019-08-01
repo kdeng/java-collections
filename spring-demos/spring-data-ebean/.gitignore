@@ -1,0 +1,29 @@
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# complie class
+target
+*.class
+
+# ide settings
+.idea
+.projects
+.DS_Store
+*.iml
+
+# others
+log
+*.log
+
+# release
+release.properties
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+!src/test/resources/testdb/hsql-data.sql
+!src/test/resources/testdb/hsql-schema.sql
+!src/test/resources/testdb/mysql_data.sql
+!src/test/resources/testdb/mysql_schema.sql
