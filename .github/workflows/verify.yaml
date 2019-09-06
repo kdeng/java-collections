@@ -1,0 +1,26 @@
+name: Github Actions
+
+# This workflow is triggered on pushes to the repository.
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    # Job name is Greeting
+    name: verify
+    # This job runs on Linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '11.0.4' // The JDK version to make available on the path. Takes a whole or semver Jdk version, or 1.x syntax (e.g. 1.8 => Jdk 8.x)
+          architecture: x64 // (x64 or x86) - defaults to x64
+      # This step prints the time.
+      - run: java --version
+      - run: mvn -version
+      - run: mvn -U clean verify
