@@ -9,8 +9,8 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
-import org.springframework.boot.context.embedded.jetty.JettyEmbeddedServletContainerFactory;
+//import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
+//import org.springframework.boot.context.embedded.jetty.JettyEmbeddedServletContainerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import reactor.Environment;
@@ -69,13 +69,12 @@ public class Application implements CommandLineRunner {
     applicationContext.getBean(Environment.class).shutdown();
   }
 
-
-  @Bean
-  public EmbeddedServletContainerFactory servletContainer() {
-    JettyEmbeddedServletContainerFactory factory = new JettyEmbeddedServletContainerFactory();
-    factory.setPort(9000);
-    factory.setSessionTimeout(10, TimeUnit.MINUTES);
-    return factory;
-  }
+//  @Bean
+//  public EmbeddedServletContainerFactory servletContainer() {
+//    JettyEmbeddedServletContainerFactory factory = new JettyEmbeddedServletContainerFactory();
+//    factory.setPort(9000);
+//    factory.setSessionTimeout(10, TimeUnit.MINUTES);
+//    return factory;
+//  }
 
 }

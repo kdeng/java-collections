@@ -13,9 +13,9 @@
   <url>https://github.com/kdeng/java-demos/java-grpc-demo1</url>
 
   <properties>
-    <java.version>1.8</java.version>
-    <grpc.version>1.19.0</grpc.version>
-    <tiles-maven-plugin.version>2.13</tiles-maven-plugin.version>
+    <java.version>11</java.version>
+    <grpc.version>1.23.0</grpc.version>
+    <tiles-maven-plugin.version>2.14</tiles-maven-plugin.version>
   </properties>
 
   <dependencies>
@@ -34,6 +34,14 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
       <version>${grpc.version}</version>
+    </dependency>
+
+    <!-- trying to fix annotation issue -->
+    <!-- refer to https://github.com/protocolbuffers/protobuf/issues/5549 -->
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.3.2</version>
     </dependency>
 
   </dependencies>
@@ -81,7 +89,7 @@
         <configuration>
           <filtering>false</filtering>
           <tiles>
-            <tile>io.osnz.tiles:java-tile:[1,2)</tile>
+            <tile>io.osnz.tiles:java11-tile:[1.1,2)</tile>
           </tiles>
         </configuration>
       </plugin>

@@ -13,8 +13,8 @@
   <url>https://github.com/kdeng/netty-demos/jersey-netty-demo1</url>
 
   <properties>
-    <java.version>1.8</java.version>
-    <tiles-maven-plugin.version>2.12</tiles-maven-plugin.version>
+    <java.version>11</java.version>
+    <tiles-maven-plugin.version>2.14</tiles-maven-plugin.version>
   </properties>
 
   <dependencies>
@@ -85,7 +85,7 @@
         <configuration>
           <filtering>false</filtering>
           <tiles>
-            <tile>io.osnz.tiles:java-tile:[1,2)</tile>
+            <tile>io.osnz.tiles:java11-tile:[1.1,2)</tile>
           </tiles>
         </configuration>
       </plugin>
@@ -126,44 +126,57 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>com.google.cloud.tools</groupId>
-        <artifactId>jib-maven-plugin</artifactId>
-        <version>1.0.2</version>
-        <configuration>
-          <from>
-            <image>openjdk:alpine</image>
-          </from>
-          <container>
-            <user>root</user>
-            <jvmFlags>
-              <jvmFlag>-Xms258m</jvmFlag>
-              <jvmFlag>-Xdebug</jvmFlag>
-            </jvmFlags>
-            <mainClass>nz.net.osnz.demos.jersey.App</mainClass>
-          </container>
-          <to>
-            <image>jersey-netty-demo:${project.version}</image>
-          </to>
-        </configuration>
-        <executions>
-          <execution>
-            <id>build-docker</id>
-            <phase>install</phase>
-            <goals>
-              <goal>dockerBuild</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>push-docker</id>
-            <phase>deploy</phase>
-            <goals>
-              <goal>build</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>build-docker</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.google.cloud.tools</groupId>
+            <artifactId>jib-maven-plugin</artifactId>
+            <version>1.5.1</version>
+            <configuration>
+              <from>
+                <image>openjdk:alpine</image>
+              </from>
+              <container>
+                <user>root</user>
+                <jvmFlags>
+                  <jvmFlag>-Xms258m</jvmFlag>
+                  <jvmFlag>-Xdebug</jvmFlag>
+                </jvmFlags>
+                <mainClass>nz.net.osnz.demos.jersey.App</mainClass>
+              </container>
+              <to>
+                <image>jersey-netty-demo:${project.version}</image>
+              </to>
+            </configuration>
+            <executions>
+              <execution>
+                <id>build-docker</id>
+                <phase>install</phase>
+                <goals>
+                  <goal>dockerBuild</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>push-docker</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>build</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>

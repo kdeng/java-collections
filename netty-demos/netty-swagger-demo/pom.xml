@@ -12,10 +12,9 @@
   <url>https://github.com/kdeng/netty-swagger-demo</url>
 
   <modules>
+    <module>netty-swagger-api-demo</module>
     <module>netty-swagger-client-demo</module>
     <module>netty-swagger-server-demo</module>
-    <module>netty-swagger-api-demo</module>
   </modules>
-
 
 </project>

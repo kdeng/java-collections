@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.osnz.demos</groupId>
-  <artifactId>kotlin-demo-reactor</artifactId>
-  <packaging>jar</packaging>
+  <artifactId>kotlin-demos-reactor</artifactId>
+  <packaging>pom</packaging>
   <version>1.1-SNAPSHOT</version>
 
-  <name>kotlin-demo-reactor</name>
-  <description>kotlin-demo-reactor</description>
+  <name>kotlin-demos-reactor</name>
+  <description>kotlin-demos-reactor</description>
 
   <modules>
     <module>kotlin-sample-1</module>

@@ -4,13 +4,13 @@ import io.netty.channel.ChannelDuplexHandler
 import io.netty.channel.ChannelHandlerContext
 import io.netty.channel.ChannelPromise
 
-import io.osnz.demos.netty.channel.log.logger
 import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 
 class NettyDemoHandler : ChannelDuplexHandler() {
 
-  private val log: Logger = logger(this)
+  private val log: Logger = LoggerFactory.getLogger(this::class.simpleName)
 
   override fun channelReadComplete(ctx: ChannelHandlerContext) {
     ctx.flush()

@@ -14,9 +14,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>nz.co.asb.engagement.composite</groupId>
-      <artifactId>composite-jdk11</artifactId>
-      <version>1.1</version>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-java11-support</artifactId>
+      <version>[1.1,2)</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
     <dependency>
@@ -69,7 +69,7 @@
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-logging</artifactId>
-      <version>[4.7]</version>
+      <version>[5,6)</version>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -80,7 +80,7 @@
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-unit-test</artifactId>
-      <version>[6.2]</version>
+      <version>[6,7)</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -95,7 +95,7 @@
         <configuration>
           <filtering>false</filtering>
           <tiles>
-            <tile>io.osnz.tiles:java11-tile:[1,2)</tile>
+            <tile>io.osnz.tiles:java11-tile:[1.1,2)</tile>
           </tiles>
         </configuration>
       </plugin>

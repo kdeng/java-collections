@@ -4,17 +4,18 @@ import cd.connect.lifecycle.ApplicationLifecycleManager
 import cd.connect.lifecycle.LifecycleStatus
 import io.osnz.demos.netty.channel.api.HomeResource
 import io.osnz.demos.netty.channel.handler.NettyDemoHandler
-import io.osnz.demos.netty.channel.log.logger
+
 import org.glassfish.jersey.logging.JerseyServerLogger
 import org.glassfish.jersey.netty.httpserver.NettyHttpContainerProvider
 import org.glassfish.jersey.server.ResourceConfig
 import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import java.net.URI
 
 class App {
   companion object {
     @JvmField
-    val log: Logger = logger(this)
+    val log: Logger = LoggerFactory.getLogger(this::class.simpleName)
   }
 }
 

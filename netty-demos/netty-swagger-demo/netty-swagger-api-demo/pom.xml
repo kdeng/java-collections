@@ -13,7 +13,7 @@
   <url>https://github.com/kdeng/netty-demos/netty-swagger-demo/netty-swagger-api-demo</url>
 
   <properties>
-    <java.version>1.8</java.version>
+    <java.version>11</java.version>
   </properties>
 
   <dependencies>

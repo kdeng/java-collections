@@ -23,12 +23,6 @@
     <module>java-spi-sample</module>
     <module>java-file-operations</module>
     <module>java-io-samples</module>
-
-    <module>maven-plugin-demo</module>
-    <module>maven-resouce-plugin-sample1</module>
-
-    <module>java-grpc-demo</module>
-    <module>swagger-codegen-demo1</module>
     <module>java-jvm</module>
     <module>java-jwt</module>
   </modules>

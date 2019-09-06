@@ -27,6 +27,9 @@
     <module>spring-demos</module>
     <module>kotlin-demos</module>
     <module>vertx-demos</module>
+    <module>maven-demos</module>
+    <module>swagger-demos</module>
+    <module>grpc-demos</module>
   </modules>
 
   <build>

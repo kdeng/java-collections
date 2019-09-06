@@ -1,39 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.osnz.demos.netty.client</groupId>
-    <artifactId>netty-swagger-client-demo</artifactId>
-    <version>1.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+  <groupId>io.osnz.demos.netty.client</groupId>
+  <artifactId>netty-swagger-client-demo</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
-    <name>netty-swagger-client-demo</name>
-    <description>netty-swagger-client-demo</description>
-    <url>https://github.com/kdeng/netty-demos/netty-swagger-demo/netty-swagger-client-demo</url>
+  <name>netty-swagger-client-demo</name>
+  <description>netty-swagger-client-demo</description>
+  <url>https://github.com/kdeng/netty-demos/netty-swagger-demo/netty-swagger-client-demo</url>
 
-    <properties>
-    </properties>
+  <dependencies>
+    <!-- core dependencies -->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-mvc</artifactId>
+      <version>[5.14,6)</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot</artifactId>
+      <version>[5.14,6)</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot-undertow</artifactId>
+      <version>[5.14,6)</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-logging</artifactId>
+      <version>[4,5)</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.common</groupId>
+      <artifactId>common-jackson</artifactId>
+      <version>[2,3)</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-jackson</artifactId>
+      <version>[2,3)</version>
+    </dependency>
 
-    <dependencies>
+    <!-- test scope -->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot-test</artifactId>
+      <version>[5.14,6)</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-test</artifactId>
+      <version>[5.14,6)</version>
+      <scope>test</scope>
+    </dependency>
 
+    <!-- spring boot devtools -->
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot-devtools</artifactId>
+      <version>[5.14,6)</version>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
 
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>io.repaint.maven</groupId>
-                <artifactId>tiles-maven-plugin</artifactId>
-                <version>2.14</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <filtering>false</filtering>
-                    <tiles>
-                        <tile>io.osnz.tiles:java-tile:[1,2)</tile>
-                    </tiles>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.repaint.maven</groupId>
+        <artifactId>tiles-maven-plugin</artifactId>
+        <version>2.14</version>
+        <extensions>true</extensions>
+        <configuration>
+          <filtering>false</filtering>
+          <tiles>
+            <tile>io.osnz.tiles:java11-tile:[1.1,2)</tile>
+          </tiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
