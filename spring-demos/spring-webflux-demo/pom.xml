@@ -24,90 +24,22 @@
       <artifactId>composite-groovy</artifactId>
       <version>[5,6)</version>
     </dependency>
-
-    <!-- core dependencies -->
-    <!--<dependency>-->
-    <!--<groupId>nz.net.osnz.composite</groupId>-->
-    <!--<artifactId>composite-spring-mvc</artifactId>-->
-    <!--<version>[5.3,6)</version>-->
-    <!--</dependency>-->
+    
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-spring-web</artifactId>
-      <version>[5.14]</version>
+      <artifactId>composite-spring-webflux</artifactId>
+      <version>[5.17]</version>
     </dependency>
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-spring-boot</artifactId>
-      <version>[5.14]</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-web</artifactId>
-        </exclusion>
-        <exclusion>
-          <artifactId>spring-boot-starter</artifactId>
-          <groupId>org.springframework.boot</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-webflux</artifactId>
-      <version>[2.1.4.RELEASE]</version>
-      <exclusions>
-        <!--<exclusion>-->
-        <!--<groupId>org.springframework</groupId>-->
-        <!--<artifactId>spring-webflux</artifactId>-->
-        <!--</exclusion>-->
-        <exclusion>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-core</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-web</artifactId>
-        </exclusion>
-        <!-- 移除 tomcat -->
-        <exclusion>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-tomcat</artifactId>
-        </exclusion>
-        <!-- 移除默认 logging -->
-        <exclusion>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-logging</artifactId>
-        </exclusion>
-        <exclusion>
-          <artifactId>slf4j-api</artifactId>
-          <groupId>org.slf4j</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>jackson-annotations</artifactId>
-          <groupId>com.fasterxml.jackson.core</groupId>
-        </exclusion>
-        <!--<exclusion>-->
-        <!--<groupId>io.projectreactor</groupId>-->
-        <!--<artifactId>reactor-core</artifactId>-->
-        <!--</exclusion>-->
-      </exclusions>
+      <artifactId>composite-spring-boot-webflux</artifactId>
+      <version>[5.17]</version>
     </dependency>
 
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-spring-boot-jetty</artifactId>
-      <version>[5.14]</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>javax.annotation-api</artifactId>
-          <groupId>javax.annotation</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-logging</artifactId>
-      <version>[5.2]</version>
+      <artifactId>composite-spring-boot-logging</artifactId>
+      <version>[5.17]</version>
     </dependency>
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
@@ -130,7 +62,7 @@
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-spring-test</artifactId>
-      <version>[5.14]</version>
+      <version>[5.17]</version>
       <scope>test</scope>
     </dependency>
 
@@ -138,7 +70,7 @@
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-spring-boot-devtools</artifactId>
-      <version>[5.14]</version>
+      <version>[5.17]</version>
       <optional>true</optional>
     </dependency>
 

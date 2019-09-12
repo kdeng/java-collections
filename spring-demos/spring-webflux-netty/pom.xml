@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>spring-demos-reactor</artifactId>
-    <groupId>io.osnz.demos</groupId>
-    <version>1</version>
-  </parent>
 
   <groupId>nz.net.osnz</groupId>
   <artifactId>spring-webflux-netty</artifactId>
@@ -19,32 +15,24 @@
 
   <properties>
     <java.version>11</java.version>
-    <spring-boot.version>2.0.5.RELEASE</spring-boot.version>
-    <tiles-maven-plugin.version>2.12</tiles-maven-plugin.version>
   </properties>
 
   <dependencies>
-
     <!-- core dependencies -->
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-spring-mvc</artifactId>
-      <version>[5.14]</version>
+      <artifactId>composite-spring-webflux</artifactId>
+      <version>[5.17]</version>
     </dependency>
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-spring-boot</artifactId>
-      <version>[5.14]</version>
+      <artifactId>composite-spring-boot-webflux</artifactId>
+      <version>[5.17]</version>
     </dependency>
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-spring-boot-undertow</artifactId>
-      <version>[5.14]</version>
-    </dependency>
-    <dependency>
-      <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-logging</artifactId>
-      <version>[5.2]</version>
+      <artifactId>composite-spring-boot-log4j2</artifactId>
+      <version>[5.17]</version>
     </dependency>
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
@@ -56,18 +44,30 @@
       <artifactId>common-jackson</artifactId>
       <version>[2.2]</version>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>[1.18.10]</version>
+      <scope>provided</scope>
+    </dependency>
 
     <!-- test scope -->
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-spring-boot-test</artifactId>
-      <version>[5.14]</version>
+      <version>[5.17]</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-spring-test</artifactId>
-      <version>[5.14]</version>
+      <version>[5.17]</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-test</artifactId>
+      <version>[3.2.12.RELEASE]</version>
       <scope>test</scope>
     </dependency>
 
@@ -75,7 +75,7 @@
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-spring-boot-devtools</artifactId>
-      <version>[5.14]</version>
+      <version>[5.15]</version>
       <optional>true</optional>
     </dependency>
 
@@ -86,7 +86,7 @@
       <plugin>
         <groupId>io.repaint.maven</groupId>
         <artifactId>tiles-maven-plugin</artifactId>
-        <version>${tiles-maven-plugin.version}</version>
+        <version>2.15</version>
         <extensions>true</extensions>
         <configuration>
           <filtering>false</filtering>
