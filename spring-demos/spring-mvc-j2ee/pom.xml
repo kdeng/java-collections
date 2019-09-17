@@ -8,6 +8,7 @@
     <groupId>nz.net.osnz.parent</groupId>
     <artifactId>groovy-parent</artifactId>
     <version>6.2</version>
+    <relativePath />
   </parent>
 
   <groupId>io.osnz.demos</groupId>

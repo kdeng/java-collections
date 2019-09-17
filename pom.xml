@@ -7,6 +7,7 @@
     <groupId>nz.net.osnz.parent</groupId>
     <artifactId>central-parent</artifactId>
     <version>6.2</version>
+    <relativePath />
   </parent>
 
   <groupId>io.osnz.demos</groupId>
@@ -38,12 +39,12 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>sonar-maven-plugin</artifactId>
-          <version>3.4.0.905</version>
+          <version>3.6.1.1688</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.1.0</version>
           <executions>
             <execution>
               <goals>
@@ -61,6 +62,29 @@
             <consoleOutput>true</consoleOutput>
             <linkXRef>false</linkXRef>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.4</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>jacoco-report</id>
+              <phase>prepare-package</phase>
+              <goals>
+                <goal>report</goal>
+              </goals>
+              <!-- default target/jscoco/site/* -->
+              <configuration>
+                <outputDirectory>target/jacoco-report</outputDirectory>
+              </configuration>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>

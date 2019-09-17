@@ -25,14 +25,14 @@ jobs:
       - name: Check maven version
         run: mvn -version
 
-      - name: maven verify
-        run: mvn -U clean verify
+      - name: maven verify install
+        run: mvn -U clean verify install
 
       - name: sonarcloud
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           BRANCH_NAME: "master"
-        run: mvn jacoco:report sonar:sonar \
+        run: mvn org.jacoco:jacoco-maven-plugin:prepare-agent sonar:sonar \
           -q --batch-mode \
           -Dmaven.test.failure.ignore=true \
           -Dmaven.test.error.ignore=true \

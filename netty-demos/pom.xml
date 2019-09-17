@@ -7,6 +7,7 @@
     <groupId>nz.net.osnz.parent</groupId>
     <artifactId>central-parent</artifactId>
     <version>6.2</version>
+    <relativePath />
   </parent>
 
   <groupId>io.osnz.demos</groupId>
