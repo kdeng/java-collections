@@ -32,8 +32,8 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           BRANCH_NAME: "master"
-        run: mvn org.jacoco:jacoco-maven-plugin:prepare-agent sonar:sonar \
-          -q --batch-mode \
+        run: |-
+          mvn org.jacoco:jacoco-maven-plugin:prepare-agent sonar:sonar -q --batch-mode \
           -Dmaven.test.failure.ignore=true \
           -Dmaven.test.error.ignore=true \
           -Dsonar.login=$SONAR_TOKEN \
