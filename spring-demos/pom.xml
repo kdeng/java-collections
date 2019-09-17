@@ -4,11 +4,6 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>nz.net.osnz.parent</groupId>
-    <artifactId>central-parent</artifactId>
-    <version>6.2</version>
-  </parent>
 
   <groupId>io.osnz.demos</groupId>
   <artifactId>spring-demos-reactor</artifactId>
@@ -40,6 +35,7 @@
     <module>spring-webservice-cxf</module>
     <module>spring-websocket-jetty</module>
     <module>spring-webflux-netty</module>
+    <module>spring-rxjava-async1</module>
   </modules>
 
 </project>
