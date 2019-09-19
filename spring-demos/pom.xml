@@ -35,7 +35,7 @@
     <module>spring-webservice-cxf</module>
     <module>spring-websocket-jetty</module>
     <module>spring-webflux-netty</module>
-    <module>spring-rxjava-async1</module>
+    <module>spring-boot-async1</module>
   </modules>
 
 </project>

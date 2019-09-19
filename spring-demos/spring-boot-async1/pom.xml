@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>nz.net.osnz</groupId>
-  <artifactId>spring-rxjava-async1</artifactId>
+  <artifactId>spring-boot-async1</artifactId>
   <version>1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>spring-rxjava-async1</name>
-  <description>spring-rxjava-async1</description>
-  <url>https://github.com/kdeng/spring-rxjava-async1</url>
+  <name>spring-boot-async1</name>
+  <description>spring-boot-async1</description>
+  <url>https://github.com/kdeng/spring-boot-async1</url>
 
   <dependencies>
 
