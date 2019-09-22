@@ -3,4 +3,10 @@ management:
   endpoints:
     enabled-by-default: true
     web:
+      exposure:
+        include: "*"
       base-path: /actuator
+  endpoint:
+    beans:
+      cache:
+        time-to-live: 10s

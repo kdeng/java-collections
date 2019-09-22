@@ -26,11 +26,10 @@
     </logger>
 
     <logger name="nz.net.osnz.java" level="DEBUG" additivity="false">
-        <!--<appender-ref ref="APPLICATION" />-->
         <appender-ref ref="STDOUT" />
     </logger>
 
-    <root level="WARN">
+    <root level="INFO">
         <appender-ref ref="STDOUT" />
     </root>
 

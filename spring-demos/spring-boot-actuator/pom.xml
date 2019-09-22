@@ -20,6 +20,12 @@
 
   <dependencies>
 
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-context</artifactId>
+      <version>2.1.3.RELEASE</version>
+    </dependency>
+
     <!-- core dependencies -->
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
@@ -38,8 +44,14 @@
     </dependency>
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-logging</artifactId>
-      <version>[5,6)</version>
+      <artifactId>composite-spring-boot-logging</artifactId>
+      <version>[5.17]</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>[1.18.10]</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>nz.net.osnz.common</groupId>

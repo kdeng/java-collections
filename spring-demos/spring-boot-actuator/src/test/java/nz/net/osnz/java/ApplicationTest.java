@@ -24,5 +24,10 @@ public class ApplicationTest {
         Assert.assertEquals("Hello World", body);
     }
 
+  @Test
+  public void shouldReturnResponseBodyWithPathVariable() {
+    String body = this.restTemplate.getForObject("/asd", String.class);
+    Assert.assertEquals("Hello asd", body);
+  }
 
 }
