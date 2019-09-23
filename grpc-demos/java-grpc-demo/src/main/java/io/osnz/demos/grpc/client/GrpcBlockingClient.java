@@ -9,21 +9,20 @@ import io.osnz.demos.grpc.HelloServiceGrpc;
 /**
  * @author Kefeng Deng (deng@51any.com)
  */
-public class GrpcClient {
+public class GrpcBlockingClient {
 
   public static void main(String[] args) {
     ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080)
-        .usePlaintext()
-        .build();
+      .usePlaintext()
+      .build();
 
     HelloServiceGrpc.HelloServiceBlockingStub stub
-        = HelloServiceGrpc.newBlockingStub(channel);
+      = HelloServiceGrpc.newBlockingStub(channel);
 
     HelloResponse helloResponse = stub.hello(HelloRequest.newBuilder()
-        .setFirstName("Baeldung")
-        .setLastName("gRPC")
-        .build());
-
+      .setFirstName("Baeldung")
+      .setLastName("gRPC")
+      .build());
 
     System.out.println("Response : " + helloResponse.getGreeting());
 

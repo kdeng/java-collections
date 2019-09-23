@@ -11,20 +11,16 @@ import io.osnz.demos.grpc.HelloServiceGrpc;
 public class HelloServiceImpl extends HelloServiceGrpc.HelloServiceImplBase {
 
   @Override
-  public void hello(
-      HelloRequest request, StreamObserver<HelloResponse> responseObserver) {
-
+  public void hello(HelloRequest request, StreamObserver<HelloResponse> responseObserver) {
+    System.out.println("Received a request : " + request.getFirstName());
     String greeting = new StringBuilder()
-        .append("Hello, ")
-        .append(request.getFirstName())
-        .append(" ")
-        .append(request.getLastName())
-        .toString();
+      .append("Hello, ")
+      .append(request.getFirstName())
+      .append(" ")
+      .append(request.getLastName())
+      .toString();
 
-    HelloResponse response = HelloResponse.newBuilder()
-        .setGreeting(greeting)
-        .build();
-
+    HelloResponse response = HelloResponse.newBuilder().setGreeting(greeting).build();
     responseObserver.onNext(response);
     responseObserver.onCompleted();
   }
