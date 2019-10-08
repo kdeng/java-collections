@@ -19,7 +19,6 @@
   <description>micronaut-demos-reactor</description>
 
   <modules>
-    <module>micronaut-proxy-demo</module>
     <module>micronaut-web-demo</module>
   </modules>
 
