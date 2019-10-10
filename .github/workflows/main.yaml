@@ -28,6 +28,9 @@ jobs:
       - name: maven verify
         run: mvn -U clean verify
 
+      - name: maven install
+        run: mvn -B install -DskipTests
+
       - name: sonarcloud
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
