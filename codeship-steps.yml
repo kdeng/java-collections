@@ -1,0 +1,4 @@
+- name: build
+  tag: "^master$"
+  service: maven-jdk-builder
+  command: /app/codeship/build.sh
