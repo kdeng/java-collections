@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
@@ -8,14 +8,13 @@
     <groupId>nz.net.osnz.parent</groupId>
     <artifactId>central-parent</artifactId>
     <version>6.2</version>
-    <relativePath />
+    <relativePath/>
   </parent>
 
   <groupId>io.osnz.demos</groupId>
   <artifactId>java-demos-reactor</artifactId>
   <version>1</version>
   <packaging>pom</packaging>
-
   <name>java-demos-reactor</name>
   <description>java-demos-reactor</description>
 
@@ -26,6 +25,7 @@
     <module>java-io-samples</module>
     <module>java-jvm</module>
     <module>java-jwt</module>
+    <module>java-annotation-processor</module>
   </modules>
 
 </project>

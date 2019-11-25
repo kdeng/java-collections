@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>io.osnz.demos</groupId>
-
   <artifactId>spring-demos-reactor</artifactId>
-
   <version>1</version>
-
   <packaging>pom</packaging>
-
   <name>spring-demos-reactor</name>
-
   <description>spring-demos-reactor</description>
-
   <modules>
     <module>spring-batch-demo</module>
     <module>spring-boot-appengine-demo</module>
@@ -40,6 +33,7 @@
     <module>spring-webflux-netty</module>
     <module>spring-boot-async1</module>
     <module>spring-boot-actuator</module>
+    <module>spring-boot-jib-tile-demo</module>
+    <module>spring-boot-simple-demo</module>
   </modules>
-
 </project>
