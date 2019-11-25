@@ -1,0 +1,14 @@
+<Configuration monitorInterval="30" verbose="true">
+  <Appenders>
+    <Console name="STDOUT" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}{GMT+12} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <AsyncLogger name="nz.net.osnz" level="debug" />
+    <AsyncLogger name="jersey-logging" level="info" />
+    <AsyncRoot level="debug">
+      <AppenderRef ref="STDOUT"/>
+    </AsyncRoot>
+  </Loggers>
+</Configuration>
