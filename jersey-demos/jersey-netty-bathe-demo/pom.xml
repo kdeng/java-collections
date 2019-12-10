@@ -30,6 +30,12 @@
 
     <dependency>
       <groupId>nz.net.osnz.common</groupId>
+      <artifactId>cloud-log4j2-over-slf4j-appender</artifactId>
+      <version>[1,2)</version>
+    </dependency>
+
+    <dependency>
+      <groupId>nz.net.osnz.common</groupId>
       <artifactId>common-jackson</artifactId>
       <version>[2.2]</version>
       <exclusions>
@@ -148,6 +154,7 @@
           <filtering>false</filtering>
           <tiles>
             <tile>io.osnz.tiles:tile-java-core:[1.1,2)</tile>
+            <tile>io.osnz.tiles:tile-jib-docker-bathe:[1,2)</tile>
           </tiles>
         </configuration>
       </plugin>
@@ -191,55 +198,5 @@
 <!--      </plugin>-->
     </plugins>
   </build>
-
-  <profiles>
-    <profile>
-      <id>build-docker</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>com.google.cloud.tools</groupId>
-            <artifactId>jib-maven-plugin</artifactId>
-            <version>1.8.0</version>
-            <configuration>
-              <from>
-                <image>openjdk:8-jre-stretch</image>
-              </from>
-              <container>
-                <user>root</user>
-                <jvmFlags>
-                  <jvmFlag>-Xms258m</jvmFlag>
-                  <jvmFlag>-Xdebug</jvmFlag>
-                </jvmFlags>
-                <mainClass>nz.net.osnz.demos.jersey.App</mainClass>
-              </container>
-              <to>
-                <image>jersey-netty-bathe-demo:${project.version}</image>
-              </to>
-            </configuration>
-            <executions>
-              <execution>
-                <id>build-docker</id>
-                <phase>install</phase>
-                <goals>
-                  <goal>dockerBuild</goal>
-                </goals>
-              </execution>
-              <execution>
-                <id>push-docker</id>
-                <phase>deploy</phase>
-                <goals>
-                  <goal>build</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 
 </project>

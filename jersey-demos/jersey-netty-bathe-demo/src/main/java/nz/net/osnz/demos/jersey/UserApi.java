@@ -23,4 +23,8 @@ public class UserApi {
     return Response.ok().entity(User.builder().name("bobo").greeting(helloService.getHello()).build()).build();
   }
 
+  public static void hello() {
+    HelloService.hello();
+  }
+
 }

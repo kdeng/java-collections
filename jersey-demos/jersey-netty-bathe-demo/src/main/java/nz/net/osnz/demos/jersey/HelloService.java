@@ -10,4 +10,8 @@ public class HelloService {
     return "Hello " + name;
   }
 
+  public static void hello() {
+    throw new IllegalArgumentException("Hello exception");
+  }
+
 }

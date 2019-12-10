@@ -51,6 +51,12 @@ public class App {
       Runtime.getRuntime().addShutdownHook(new Thread(() -> server.close()));
       LOG.info("Application is listening on {}{} (HTTP/2 enabled!)", BASE_URI, ROOT_PATH);
 
+      try {
+        UserApi.hello();
+      } catch (Exception ex) {
+        LOG.error("catch API exception : {}", ex.getMessage(), ex);
+      }
+
       Thread.currentThread().join();
 
     } catch (InterruptedException ex) {
