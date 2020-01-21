@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.osnz.demos</groupId>
-  <artifactId>java-thread-pool</artifactId>
+  <artifactId>java-threadpool1</artifactId>
   <version>1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>java-thread-pool</name>
-  <description>java-thread-pool</description>
-  <url>https://github.com/kdeng/java-demos/java-thread-pool</url>
+  <name>java-threadpool1</name>
+  <description>java-threadpool1</description>
+  <url>https://github.com/kdeng/java-demos/java-threadpool1</url>
 
   <properties>
     <java.version>11</java.version>
