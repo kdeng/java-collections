@@ -11,18 +11,15 @@
   </parent>
 
   <groupId>io.osnz.demos</groupId>
-  <artifactId>netty-demos-reactor</artifactId>
+  <artifactId>sparkjava-demo-reactor</artifactId>
   <version>1</version>
   <packaging>pom</packaging>
 
-  <name>netty-demos-reactor</name>
-  <description>netty-demos-reactor</description>
-
-  <url>https://github.com/kdeng/netty-demos</url>
+  <name>sparkjava-demo-reactor</name>
+  <description>sparkjava-demo-reactor</description>
 
   <modules>
-    <module>netty-channel-api-demo</module>
-    <module>netty-swagger-demo</module>
+    <module>sparkjava-api-demo1</module>
   </modules>
 
 </project>

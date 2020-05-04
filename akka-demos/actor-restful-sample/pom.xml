@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.osnz.demos</groupId>
-  <artifactId>java-annotation-processor</artifactId>
+  <artifactId>actor-restful-sample</artifactId>
   <version>1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>java-annotation-processor</name>
-  <description>java-annotation-processor</description>
-  <url>https://github.com/kdeng/java-annotation-processor</url>
+  <name>actor-restful-sample</name>
+  <description>actor-restful-sample</description>
+  <url>https://github.com/kdeng/actor-restful-sample</url>
 
   <properties>
     <!-- dependency version -->
-    <composite-spring.version>5.19</composite-spring.version>
+    <composite-spring.version>5.21</composite-spring.version>
     <common-jackson.version>2.2</common-jackson.version>
     <composite-jackson.version>2.13</composite-jackson.version>
-    <spring-core.version>5.2.0.RELEASE</spring-core.version>
-    <spring-boot.version>2.2.0.RELEASE</spring-boot.version>
-    <lombok.version>1.18.10</lombok.version>
+    <spring-core.version>5.2.4.RELEASE</spring-core.version>
+    <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
+    <lombok.version>1.18.12</lombok.version>
 
     <!-- plugin version -->
     <tiles-maven-plugin.version>2.15</tiles-maven-plugin.version>
@@ -26,27 +27,28 @@
 
   <dependencies>
 
+    <!-- Akka -->
     <dependency>
-      <groupId>org.reflections</groupId>
-      <artifactId>reflections</artifactId>
-      <version>0.9.11</version>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-actor_2.13</artifactId>
+      <version>[2.6.3]</version>
     </dependency>
 
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>28.1-jre</version>
-    </dependency>
 
     <!-- core dependencies -->
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-spring-core</artifactId>
+      <artifactId>composite-spring-webmvc</artifactId>
       <version>[${composite-spring.version}]</version>
     </dependency>
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-spring-boot</artifactId>
+      <version>[${composite-spring.version}]</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot-undertow</artifactId>
       <version>[${composite-spring.version}]</version>
     </dependency>
     <dependency>
