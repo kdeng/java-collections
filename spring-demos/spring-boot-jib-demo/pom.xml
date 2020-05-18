@@ -88,7 +88,7 @@
           <filtering>false</filtering>
           <tiles>
             <tile>io.osnz.tiles:tile-java11:[1.1,2)</tile>
-            <tile>io.osnz.tiles:tile-jib-docker-spring-boot:[1,2)</tile>
+            <!-- <tile>io.osnz.tiles:tile-jib-docker-spring-boot:[1,2)</tile> -->
           </tiles>
         </configuration>
       </plugin>
