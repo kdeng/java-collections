@@ -74,7 +74,7 @@
         <configuration>
           <filtering>false</filtering>
           <tiles>
-            <tile>io.osnz.tiles:java11-tile:[1.1,2)</tile>
+            <tile>io.osnz.tiles:tile-java11:[1,2)</tile>
           </tiles>
         </configuration>
       </plugin>

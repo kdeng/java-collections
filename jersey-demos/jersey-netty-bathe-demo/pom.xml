@@ -13,7 +13,8 @@
   <url>https://github.com/kdeng/netty-demos/jersey-netty-bathe-demo1</url>
 
   <properties>
-    <java.version>8</java.version>
+<!--    <java.version>8</java.version>-->
+    <docker.mainClass>nz.net.osnz.demos.jersey.App</docker.mainClass>
   </properties>
 
   <dependencies>
@@ -22,6 +23,7 @@
       <artifactId>composite-jersey-media</artifactId>
       <version>[1,2)</version>
     </dependency>
+
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-jersey-netty</artifactId>
@@ -38,18 +40,6 @@
       <groupId>nz.net.osnz.common</groupId>
       <artifactId>common-jackson</artifactId>
       <version>[2.2]</version>
-      <exclusions>
-        <exclusion>
-          <groupId>nz.net.osnz.composite</groupId>
-          <artifactId>composite-jackson</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
-    <dependency>
-      <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-jackson</artifactId>
-      <version>[2.13]</version>
     </dependency>
 
     <dependency>
@@ -80,29 +70,6 @@
 
 
     <dependency>
-      <groupId>cd.connect.common</groupId>
-      <artifactId>connect-java-logging-log4j2</artifactId>
-      <version>[1.2,2)</version>
-      <exclusions>
-        <exclusion>
-          <groupId>cd.connect.composites.java</groupId>
-          <artifactId>connect-composite-groovy</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>cd.connect.composites.java</groupId>
-          <artifactId>connect-composite-logging</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>cd.connect.composites.java</groupId>
-          <artifactId>connect-composite-log4j2</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>cd.connect.composites.java</groupId>
-          <artifactId>connect-composite-jackson</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
       <groupId>com.bluetrainsoftware.bathe.initializers</groupId>
       <artifactId>jul-bridge</artifactId>
       <version>[2.1]</version>
@@ -113,10 +80,11 @@
         </exclusion>
       </exclusions>
     </dependency>
+
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-groovy</artifactId>
-      <version>[6.2]</version>
+      <version>[6,7)</version>
     </dependency>
 
   </dependencies>
@@ -126,13 +94,13 @@
       <plugin>
         <groupId>io.repaint.maven</groupId>
         <artifactId>tiles-maven-plugin</artifactId>
-        <version>2.15</version>
+        <version>2.16</version>
         <extensions>true</extensions>
         <configuration>
           <filtering>false</filtering>
           <tiles>
-            <tile>io.osnz.tiles:tile-java-core:[1.1,2)</tile>
-            <!-- <tile>io.osnz.tiles:tile-jib-docker-bathe:[1,2)</tile> -->
+            <tile>io.osnz.tiles:tile-java11:[1,2)</tile>
+<!--            <tile>io.osnz.tiles:tile-jib-docker-bathe:[1,2)</tile>-->
           </tiles>
         </configuration>
       </plugin>

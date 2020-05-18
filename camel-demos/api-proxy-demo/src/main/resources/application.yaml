@@ -1,9 +1,0 @@
-
-### Server Settings
-server:
-  port: 9090
-
-management:
-  endpoint:
-    health:
-      enabled: true
