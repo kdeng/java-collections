@@ -8,7 +8,7 @@ branches:
 before_install:
 - unset GEM_PATH
 script:
-- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent verify
+- mvn -U clean verify
 cache:
   directories:
   - '$HOME/.m2/repository'
