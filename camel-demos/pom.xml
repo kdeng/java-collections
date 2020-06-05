@@ -8,7 +8,10 @@
   <packaging>pom</packaging>
   <name>camel-demos-reactor</name>
   <description>camel-demos-reactor</description>
+
   <modules>
     <module>spring-boot-camel-api-demo</module>
+    <module>spring-boot-camel-file-router-demo</module>
   </modules>
+
 </project>

@@ -1,0 +1,15 @@
+
+### Server Settings
+server:
+  port: 9090
+
+management:
+  endpoint:
+    health:
+      enabled: true
+  server:
+    port:8080
+camel:
+  springboot:
+    name: myCamel
+
