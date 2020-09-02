@@ -18,6 +18,13 @@
   </properties>
 
   <dependencies>
+
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-bathe-runner</artifactId>
+      <version>[1.1]</version>
+    </dependency>
+
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-jersey-media</artifactId>
@@ -37,15 +44,26 @@
     </dependency>
 
     <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-java11-support</artifactId>
+      <version>[1,2)</version>
+    </dependency>
+
+    <dependency>
       <groupId>nz.net.osnz.common</groupId>
       <artifactId>common-jackson</artifactId>
       <version>[2.2]</version>
     </dependency>
+<!--    <dependency>-->
+<!--      <groupId>nz.net.osnz.composite</groupId>-->
+<!--      <artifactId>composite-jackson</artifactId>-->
+<!--      <version>[2.16]</version>-->
+<!--    </dependency>-->
 
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-logging-log4j2</artifactId>
-      <version>[1.4]</version>
+      <version>[1,2)</version>
     </dependency>
 
     <dependency>
@@ -66,25 +84,6 @@
       <artifactId>composite-unit-test</artifactId>
       <version>[6.2]</version>
       <scope>test</scope>
-    </dependency>
-
-
-    <dependency>
-      <groupId>com.bluetrainsoftware.bathe.initializers</groupId>
-      <artifactId>jul-bridge</artifactId>
-      <version>[2.1]</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
-    <dependency>
-      <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-groovy</artifactId>
-      <version>[6,7)</version>
     </dependency>
 
   </dependencies>
