@@ -4,13 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>nz.net.osnz.parent</groupId>
-    <artifactId>groovy-parent</artifactId>
-    <version>6.2</version>
-    <relativePath />
-  </parent>
-
   <groupId>io.osnz.demos</groupId>
   <artifactId>spring-mvc-j2ee</artifactId>
   <version>1.1-SNAPSHOT</version>
@@ -23,103 +16,82 @@
   <properties>
     <sonar.language>grvy</sonar.language>
     <java.version>11</java.version>
-    <spring-boot.version>2.1.4.RELEASE</spring-boot.version>
+    <spring-boot.version>2.3.3.RELEASE</spring-boot.version>
+    <composite-spring.version>5.25</composite-spring.version>
   </properties>
 
   <dependencies>
 
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-spring-mvc</artifactId>
-      <version>[5.14]</version>
+      <artifactId>composite-spring-webmvc</artifactId>
+      <version>[${composite-spring.version}]</version>
     </dependency>
 
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-groovy</artifactId>
-      <version>[5.2]</version>
+      <version>[6.5]</version>
     </dependency>
 
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-jackson</artifactId>
-      <version>[2.12]</version>
+      <version>[2.16]</version>
     </dependency>
 
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-spring-boot</artifactId>
-      <version>[5.14]</version>
+      <version>[${composite-spring.version}]</version>
     </dependency>
 
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-spring-boot-jetty</artifactId>
-      <version>[5.14]</version>
+      <version>[${composite-spring.version}]</version>
     </dependency>
 
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-logging</artifactId>
-      <version>[5.2]</version>
+      <artifactId>composite-logging-log4j2</artifactId>
+      <version>[1.5]</version>
     </dependency>
-
-    <!--
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-			<version>2.1.4.RELEASE</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-core</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<version>2.1.4.RELEASE</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.hibernate</groupId>
-					<artifactId>hibernate-validator</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jetty</artifactId>
-			<version>2.1.4.RELEASE</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.eclipse.jetty.websocket</groupId>
-					<artifactId>websocket-server</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.eclipse.jetty.websocket</groupId>
-					<artifactId>javax-websocket-server-impl</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-    -->
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-spring-boot-test</artifactId>
-      <version>[5.14]</version>
+      <version>[${composite-spring.version}]</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-spring-test</artifactId>
-      <version>[5.14]</version>
+      <version>[${composite-spring.version}]</version>
       <scope>test</scope>
     </dependency>
-
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spock-test</artifactId>
+      <version>[1.4]</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.repaint.maven</groupId>
+        <artifactId>tiles-maven-plugin</artifactId>
+        <version>2.17</version>
+        <extensions>true</extensions>
+        <configuration>
+          <tiles>
+            <tile>io.osnz.tiles:tile-groovy:[1,2)</tile>
+            <tile>io.osnz.tiles:tile-groovy-test:[1,2)</tile>
+          </tiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>

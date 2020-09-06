@@ -15,22 +15,19 @@ import org.springframework.core.env.Environment
 @SpringBootApplication
 class Application {
 
-  public static void main(String[] args) {
-
-    SpringApplication app = new SpringApplication(Application.class);
-    app.setBannerMode(Banner.Mode.OFF);
-    app.setBanner(new Banner() {
+  static void main(String[] args) {
+    SpringApplication app = new SpringApplication(Application.class)
+    app.bannerMode = Banner.Mode.OFF
+    app.banner = new Banner() {
       @Override
       void printBanner(Environment environment, Class<?> sourceClass, PrintStream out) {
 
       }
-    })
-    app.run(args);
+    }
+    app.run(args)
 
 //		ApplicationContext ctx = SpringApplication.run(Application.class, args)
-
 //		System.out.println("Let's inspect the beans provided by Spring Boot:")
-//
 //		String[] beanNames = ctx.getBeanDefinitionNames()
 //		Arrays.sort(beanNames)
 //		beanNames?.each {
@@ -40,7 +37,7 @@ class Application {
 
   @Bean
   JeeComponentsBeanFactoryPostProcessor jeeComponentsBeanFactoryPostProcessor() {
-    return new JeeComponentsBeanFactoryPostProcessor(Application.class.getPackage().getName());
+    return new JeeComponentsBeanFactoryPostProcessor(Application.class.package.name)
   }
 
 //	@Bean
