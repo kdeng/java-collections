@@ -1,21 +1,19 @@
 package io.osnz
 
-import lombok.extern.log4j.Log4j2;
 import groovy.transform.CompileStatic
+import lombok.extern.log4j.Log4j2
 import org.springframework.boot.Banner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.reactive.config.EnableWebFlux
 
 /**
  * @author Kefeng Deng (deng@51any.com)
  */
 @SpringBootApplication
-@RestController
 @CompileStatic
-@EnableWebMvc
+@EnableWebFlux
 @Log4j2
 class Application {
 
@@ -23,11 +21,6 @@ class Application {
     SpringApplication app = new SpringApplication(Application)
     app.bannerMode = Banner.Mode.OFF
     app.run(args)
-  }
-
-  @GetMapping(path = '/')
-  String index() {
-    return 'Hello World'
   }
 
 }
