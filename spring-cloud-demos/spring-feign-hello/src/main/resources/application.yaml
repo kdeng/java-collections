@@ -1,0 +1,8 @@
+
+### Server Settings
+server:
+  port: 9090
+
+
+hello-service:
+  url: http://localhost:9090

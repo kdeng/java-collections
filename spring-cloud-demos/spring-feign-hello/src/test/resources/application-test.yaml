@@ -1,0 +1,2 @@
+hello-service:
+  url: http://localhost:9090
