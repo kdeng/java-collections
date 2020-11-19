@@ -1,5 +1,6 @@
 #!/bin/bash -e
 
 cd /app
-
-mvn -B clean verify
+java -version
+mvn --version
+mvn -B -U -T2C clean verify
