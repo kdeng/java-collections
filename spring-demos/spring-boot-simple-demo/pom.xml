@@ -13,15 +13,14 @@
 
   <properties>
     <!-- dependency version -->
-    <composite-spring.version>5.19</composite-spring.version>
+    <composite-spring.version>5.30</composite-spring.version>
     <common-jackson.version>2.2</common-jackson.version>
     <composite-jackson.version>2.13</composite-jackson.version>
-    <spring-core.version>5.2.0.RELEASE</spring-core.version>
     <spring-boot.version>2.2.0.RELEASE</spring-boot.version>
     <lombok.version>1.18.10</lombok.version>
 
     <!-- plugin version -->
-    <tiles-maven-plugin.version>2.15</tiles-maven-plugin.version>
+    <tiles-maven-plugin.version>2.18</tiles-maven-plugin.version>
   </properties>
 
   <dependencies>
@@ -29,12 +28,7 @@
     <!-- core dependencies -->
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-spring-webmvc</artifactId>
-      <version>[${composite-spring.version}]</version>
-    </dependency>
-    <dependency>
-      <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-spring-boot</artifactId>
+      <artifactId>composite-spring-boot-web</artifactId>
       <version>[${composite-spring.version}]</version>
     </dependency>
     <dependency>
@@ -62,12 +56,6 @@
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-spring-boot-test</artifactId>
-      <version>[${composite-spring.version}]</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-spring-test</artifactId>
       <version>[${composite-spring.version}]</version>
       <scope>test</scope>
     </dependency>

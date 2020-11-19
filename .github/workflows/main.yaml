@@ -30,11 +30,32 @@ jobs:
       - name: Check maven version
         run: mvn -version
 
-      - name: maven verify
-        run: mvn -U clean verify
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
 
-      - name: maven install
-        run: mvn -B install -DskipTests
+      - name: Cache Maven packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
+#      - name: maven verify
+#        run: mvn -U -T4C clean verify
+#
+#      - name: maven install
+#        run: mvn -B install -DskipTests
+
+      - name: Build and analyze
+        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          BRANCH_NAME: "master"
+        run: mvn -B -T4C clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
 
       # - name: sonarcloud
       #   env:

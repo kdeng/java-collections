@@ -19,8 +19,7 @@ import java.security.KeyPair;
 import java.security.interfaces.RSAPublicKey;
 
 import static io.jsonwebtoken.Jwts.parser;
-import static org.fest.assertions.Assertions.assertThat;
-
+import static org.assertj.core.api.Assertions.assertThat;
 /**
  * @author Kefeng Deng (https://bit.ly/2JFoCO1)
  */

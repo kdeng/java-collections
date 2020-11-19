@@ -20,6 +20,12 @@
 
   <url>https://github.com/kdeng/java-tutorials</url>
 
+  <properties>
+    <sonar.projectKey>kdeng_java-collections</sonar.projectKey>
+    <sonar.organization>kdeng</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  </properties>
+
   <modules>
     <module>java-demos</module>
     <module>jersey-demos</module>
