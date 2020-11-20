@@ -26,7 +26,6 @@
     <module>spring-mvc-templates</module>
     <module>spring-mvc-thymeleaf</module>
     <module>spring-mvc-graphql</module>
-    <module>spring-security-oauth</module>
     <module>spring-web-security</module>
     <module>spring-webflux-demo</module>
     <module>spring-webservice-cxf</module>
