@@ -8,8 +8,7 @@ branches:
 before_install:
 - unset GEM_PATH
 script:
-- mvn --version
-- mvn -U -T2C clean verify
+- mvn -B -U -T2C clean verify
 cache:
   directories:
   - '$HOME/.m2/repository'
