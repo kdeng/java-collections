@@ -1,15 +1,17 @@
 sudo: false
 language: java
 jdk:
-- oraclejdk11
+  - oraclejdk11
 branches:
   only:
-  - master
+    - master
 before_install:
-- unset GEM_PATH
+  - unset GEM_PATH
+install:
+  - mvn -B -U -T4C clean install -DskipTests
 script:
-- mvn -B -U -T2C clean verify
-#cache:
- # directories:
+  - mvn -B -U -T4C clean verify
+    #cache:
+    # directories:
   #- '$HOME/.m2/repository'
 #    - '$HOME/.sonar/cache'

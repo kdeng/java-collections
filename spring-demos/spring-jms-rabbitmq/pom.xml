@@ -16,7 +16,7 @@
   <properties>
     <java.version>11</java.version>
     <spring-boot.version>2.1.4.RELEASE</spring-boot.version>
-    <tiles-maven-plugin.version>2.13</tiles-maven-plugin.version>
+    <tiles-maven-plugin.version>2.18</tiles-maven-plugin.version>
   </properties>
 
   <dependencies>

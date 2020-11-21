@@ -15,7 +15,7 @@
   <properties>
     <java.version>11</java.version>
     <grpc.version>1.23.0</grpc.version>
-    <tiles-maven-plugin.version>2.14</tiles-maven-plugin.version>
+    <tiles-maven-plugin.version>2.18</tiles-maven-plugin.version>
   </properties>
 
   <dependencies>
