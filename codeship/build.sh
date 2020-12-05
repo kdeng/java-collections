@@ -3,4 +3,4 @@
 cd /app
 java -version
 mvn --version
-mvn -B -U -T2C clean verify
+mvn -B -U clean verify

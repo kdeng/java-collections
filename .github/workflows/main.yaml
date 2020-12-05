@@ -45,7 +45,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: maven verify
-        run: mvn -U -T4C clean verify
+        run: mvn -U clean verify
 #
 #      - name: maven install
 #        run: mvn -B install -DskipTests
