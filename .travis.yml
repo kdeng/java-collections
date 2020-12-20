@@ -8,7 +8,7 @@ branches:
 before_install:
   - unset GEM_PATH
 install:
-  - mvn -B -U clean dependency:tree
+  - mvn -B -U clean install
 script:
   - mvn -B -U clean verify
     #cache:
