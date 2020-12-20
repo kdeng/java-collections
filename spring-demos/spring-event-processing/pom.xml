@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>spring-demos-reactor</artifactId>
-    <groupId>io.osnz.demos</groupId>
-    <version>1</version>
-  </parent>
 
   <groupId>io.osnz.demos</groupId>
   <artifactId>spring-event-processing</artifactId>
@@ -18,15 +13,15 @@
 
   <properties>
     <!-- dependency version -->
-    <composite-spring.version>5.18</composite-spring.version>
+    <composite-spring.version>5.30</composite-spring.version>
     <common-jackson.version>2.2</common-jackson.version>
     <composite-jackson.version>2.13</composite-jackson.version>
-    <spring-core.version>5.2.0.RELEASE</spring-core.version>
-    <spring-boot.version>2.1.9.RELEASE</spring-boot.version>
+    <spring-core.version>5.2.12.RELEASE</spring-core.version>
+    <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
     <lombok.version>1.18.10</lombok.version>
 
     <!-- plugin version -->
-    <tiles-maven-plugin.version>2.15</tiles-maven-plugin.version>
+    <tiles-maven-plugin.version>2.19</tiles-maven-plugin.version>
   </properties>
 
   <dependencies>
