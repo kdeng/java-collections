@@ -38,17 +38,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   public void configure(WebSecurity web) throws Exception {
-    web.ignoring().antMatchers("/");
+//    web.ignoring().antMatchers("/");
   }
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http
-      .anonymous().disable()
-      .authorizeRequests()
-        .anyRequest().authenticated()
+        .authorizeRequests()
+          .antMatchers("/").permitAll()
+      .and()
+        .authorizeRequests()
+          .anyRequest().authenticated()
       .and()
         .httpBasic();
+//    http
+//      .anonymous().disable()
+//      .authorizeRequests()
+//        .anyRequest().authenticated()
+//      .and()
+//        .httpBasic();
+
+    http.csrf().disable();
+    http.headers().frameOptions().sameOrigin();
   }
 
 

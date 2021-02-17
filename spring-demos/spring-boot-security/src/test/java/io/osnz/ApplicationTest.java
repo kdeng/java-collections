@@ -32,7 +32,12 @@ public class ApplicationTest {
   @MethodSource("provideValidCredentials")
   public void whenLoggedWithCorrectCredentials_ThenSuccess(String username, String password, String path, String expectedBody) throws IllegalStateException, IOException {
     // Given
-    restTemplate = new TestRestTemplate(username, password);
+    if (username == null) {
+      restTemplate = new TestRestTemplate();
+    } else {
+      restTemplate = new TestRestTemplate(username, password);
+    }
+
     base = new URL("http://localhost:" + port + path);
 
     // When
@@ -45,7 +50,7 @@ public class ApplicationTest {
 
   static private Stream<Arguments> provideValidCredentials() {
     return Stream.of(
-      Arguments.of("", "", "/", "Hello World"),
+      Arguments.of(null, null, "/", "Hello World"),
       Arguments.of("vip", "vip", "/hello", "say hello"),
       Arguments.of("user", "user", "/hello", "say hello"),
       Arguments.of("vip", "vip", "/vip", "say vip"),
