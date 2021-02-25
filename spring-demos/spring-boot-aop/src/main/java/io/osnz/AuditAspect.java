@@ -1,6 +1,5 @@
 package io.osnz;
 
-import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -9,9 +8,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.core.Ordered;
 import org.springframework.core.annotation.AnnotationUtils;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -34,24 +31,25 @@ public class AuditAspect {
     logService.info("===> AuditAspect is ready", null);
   }
 
-  @Before("execution(* HelloService.hello(..)) && args(name))")
-  public void invokeHello(JoinPoint joinPoint, String name) {
-    logService.info("===> invoked hello method with args : {}", name);
-    logService.error("=> before execution : getArgs = {}", joinPoint.getArgs());
-    logService.warn("=> before execution : getKind = {}", joinPoint.getKind());
-    logService.warn("=> before execution : getTarget = {}", joinPoint.getTarget());
-    logService.warn("=> before execution : getClass = {}", joinPoint.getClass());
-    logService.warn("=> before execution : getStaticPart = {}", joinPoint.getStaticPart());
+//  @Before("execution(* HelloService.hello(..)) && args(name))")
+//  public void invokeHello(JoinPoint joinPoint, String name) {
+//    logService.info("===> invoked hello method with args : {}", name);
+//    logService.error("=> before execution : getArgs = {}", joinPoint.getArgs());
+//    logService.warn("=> before execution : getKind = {}", joinPoint.getKind());
+//    logService.warn("=> before execution : getTarget = {}", joinPoint.getTarget());
+//    logService.warn("=> before execution : getClass = {}", joinPoint.getClass());
+//    logService.warn("=> before execution : getStaticPart = {}", joinPoint.getStaticPart());
+//  }
+
+  @Pointcut(value = "@annotation(audit)", argNames = "audit")
+  public void auditAction(Audit audit) {
   }
 
-  @Pointcut("@annotation(audit))")
-  public void auditAction(Audit audit) throws Throwable {
-  }
 
-  @Around("auditAction(logAudit)")
-  public Object invokeAuditMethods(ProceedingJoinPoint joinPoint, Audit logAudit) throws Throwable {
+  @Around("auditAction(audit)")
+  public Object invokeAuditMethods(ProceedingJoinPoint joinPoint, Audit audit) throws Throwable {
 //    logService.printMessage(logAudit.level(), "Around: " + logAudit.message(), discoveryParameterValues(joinPoint));
-    logService.printMessage(logAudit.level(), "Around: " + getAuditMessage(joinPoint), discoveryParameterValues(joinPoint));
+    logService.printMessage(audit.level(), "Around: " + getAuditMessage(joinPoint), discoveryParameterValues(joinPoint));
     return joinPoint.proceed();
   }
 

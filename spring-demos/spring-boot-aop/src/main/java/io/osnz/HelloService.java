@@ -1,6 +1,5 @@
 package io.osnz;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
