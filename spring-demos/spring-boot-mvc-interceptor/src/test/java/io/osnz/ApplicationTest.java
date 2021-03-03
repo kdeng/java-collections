@@ -36,7 +36,7 @@ public class ApplicationTest {
   public void shouldMutateRequestURIProperly() {
     String baseUrl = "http://localhost:" + port;
     String response = helloService.sayHello(baseUrl, "asd");
-    Assertions.assertThat(response).isEqualTo("Hello asd-modified, new zealand");
+    Assertions.assertThat(response).isEqualTo("Hello asd-modified, australia");
   }
 
 
