@@ -17,17 +17,17 @@ import java.io.IOException;
  * @author Kefeng Deng (deng@51any.com)
  */
 @Component
-@Order(99)
 @Slf4j
-public class HelloFilter implements Filter {
+@Order(2)
+public class Hello2Filter implements Filter {
 
   @Override
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-    log.info("Step in HelloFilter");
-    request.setAttribute("name", "new zealand1");
+    log.info("Step in Hello2Filter");
+    request.setAttribute("name", "new zealand2");
     HttpServletResponse myResponse = (HttpServletResponse) response;
     MyResponseRequestWrapper responseWrapper = new MyResponseRequestWrapper(myResponse);
-    responseWrapper.setHeader("x-my-response", "new zealand1");
+    responseWrapper.setHeader("x-my-response", "new zealand2");
     chain.doFilter(request, myResponse);
   }
 

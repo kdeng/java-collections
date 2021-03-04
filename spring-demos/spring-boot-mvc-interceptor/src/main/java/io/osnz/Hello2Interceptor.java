@@ -13,25 +13,28 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Component
 @Slf4j
-public class HelloInterceptor implements HandlerInterceptor {
+public class Hello2Interceptor implements HandlerInterceptor {
 
   @Override
   public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
     log.info("Step in preHandle");
-    request.setAttribute("name", "australia1");
-    response.setHeader("x-response", "hello1");
+    request.setAttribute("name", "australia2");
+    response.setHeader("x-response", "hello2");
     return true;
   }
 
   @Override
   public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
     log.info("Step in afterCompletion");
-    response.setHeader("x-after-completion", "hello1");
+    response.setHeader("x-after-completion", "hello2");
+//    response.getWriter().println("hello 2 - after completion");
   }
 
   @Override
   public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
     log.info("Step in postHandle");
-    response.setHeader("x-interceptor-response", "hello1");
+    response.setHeader("x-interceptor-response", "hello2");
+//    response.getWriter().println("hello 2 - post handle");
   }
+
 }

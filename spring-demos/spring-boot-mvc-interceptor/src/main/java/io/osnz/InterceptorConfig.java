@@ -13,9 +13,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 public class InterceptorConfig extends WebMvcConfigurationSupport {
 
   private final HelloInterceptor helloInterceptor;
+  private final Hello2Interceptor hello2Interceptor;
 
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
+
+    registry.addInterceptor(hello2Interceptor);
     registry.addInterceptor(helloInterceptor);
   }
 
