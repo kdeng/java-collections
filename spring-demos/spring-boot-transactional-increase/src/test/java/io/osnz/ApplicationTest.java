@@ -20,8 +20,8 @@ public class ApplicationTest {
 
   @Test
   public void shouldReturnCorrectResponseBody() {
-    String body = this.restTemplate.getForObject("/", String.class);
-    Assert.assertEquals("Hello World", body);
+    String body = this.restTemplate.getForObject("/asd", String.class);
+    Assert.assertEquals("asd123", body);
   }
 
   @Test
