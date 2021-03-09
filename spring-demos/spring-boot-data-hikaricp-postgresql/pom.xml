@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.osnz.demos</groupId>
-  <artifactId>spring-boot-hikaricp-postgresql</artifactId>
+  <artifactId>spring-boot-data-hikaricp-postgresql</artifactId>
   <version>1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>spring-boot-hikaricp-postgresql</name>
-  <description>spring-boot-hikaricp-postgresql</description>
-  <url>https://github.com/kdeng/spring-boot-hikaricp-postgresql</url>
+  <name>spring-boot-data-hikaricp-postgresql</name>
+  <description>spring-boot-data-hikaricp-postgresql</description>
+  <url>https://github.com/kdeng/spring-boot-data-hikaricp-postgresql</url>
 
   <properties>
     <java.version>11</java.version>

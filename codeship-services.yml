@@ -1,4 +1,4 @@
 maven-jdk-builder:
-  image: docker.io/kdeng/maven:3-java-11
+  image: docker.io/maven:3-java-11
   volumes:
     - .:/app
