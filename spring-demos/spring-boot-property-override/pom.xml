@@ -3,24 +3,28 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.osnz.demos</groupId>
-  <artifactId>spring-boot-simple-demo</artifactId>
+  <artifactId>spring-boot-property-override</artifactId>
   <version>1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>spring-boot-simple-demo</name>
-  <description>spring-boot-simple-demo</description>
-  <url>https://github.com/kdeng/spring-boot-simple-demo</url>
+  <name>spring-boot-property-override</name>
+  <description>spring-boot-property-override</description>
+  <url>https://github.com/kdeng/spring-boot-property-override</url>
 
   <properties>
+    <java.version>11</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
     <!-- dependency version -->
-    <composite-spring.version>6.1.1</composite-spring.version>
+    <composite-spring.version>5.18</composite-spring.version>
     <common-jackson.version>2.2</common-jackson.version>
     <composite-jackson.version>2.13</composite-jackson.version>
-<!--    <spring-boot.version>2.2.0.RELEASE</spring-boot.version>-->
+    <spring-core.version>5.2.0.RELEASE</spring-core.version>
+    <spring-boot.version>2.1.9.RELEASE</spring-boot.version>
     <lombok.version>1.18.10</lombok.version>
 
     <!-- plugin version -->
-    <tiles-maven-plugin.version>2.18</tiles-maven-plugin.version>
+    <tiles-maven-plugin.version>2.15</tiles-maven-plugin.version>
   </properties>
 
   <dependencies>
@@ -28,7 +32,12 @@
     <!-- core dependencies -->
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-spring-boot-web</artifactId>
+      <artifactId>composite-spring-webmvc</artifactId>
+      <version>[${composite-spring.version}]</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot</artifactId>
       <version>[${composite-spring.version}]</version>
     </dependency>
     <dependency>
@@ -59,6 +68,12 @@
       <version>[${composite-spring.version}]</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-test</artifactId>
+      <version>[${composite-spring.version}]</version>
+      <scope>test</scope>
+    </dependency>
 
     <!-- spring boot devtools -->
     <dependency>
@@ -80,6 +95,18 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>2.4.3</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>io.repaint.maven</groupId>
         <artifactId>tiles-maven-plugin</artifactId>
         <version>${tiles-maven-plugin.version}</version>
@@ -88,6 +115,7 @@
           <filtering>false</filtering>
           <tiles>
             <tile>io.osnz.tiles:tile-java11:[1.1,2)</tile>
+<!--            <tile>io.osnz.tiles:tile-docker-maven:[1.1,2)</tile>-->
           </tiles>
         </configuration>
       </plugin>

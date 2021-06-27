@@ -1,18 +1,20 @@
 package io.osnz;
 
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author Kefeng Deng (deng@51any.com)
  */
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ActiveProfiles({"dev", "test"})
 public class ApplicationTest {
 
   @Autowired
@@ -21,13 +23,13 @@ public class ApplicationTest {
   @Test
   public void shouldReturnCorrectResponseBody() {
     String body = this.restTemplate.getForObject("/", String.class);
-    Assertions.assertThat(body).isEqualTo("Hello World");
+    Assert.assertEquals("myName : test : test", body);
   }
 
   @Test
   public void shouldReturnUpStatus() {
     String body = this.restTemplate.getForObject("/actuator/health", String.class);
-    Assertions.assertThat(body).isEqualTo("{\"status\":\"UP\"}");
+    Assert.assertEquals("{\"status\":\"UP\"}", body);
   }
 
 }

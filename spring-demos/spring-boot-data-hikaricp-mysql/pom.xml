@@ -3,32 +3,45 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.osnz.demos</groupId>
-  <artifactId>spring-boot-simple-demo</artifactId>
+  <artifactId>spring-boot-data-hikaricp-mysql</artifactId>
   <version>1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>spring-boot-simple-demo</name>
-  <description>spring-boot-simple-demo</description>
-  <url>https://github.com/kdeng/spring-boot-simple-demo</url>
+  <name>spring-boot-data-hikaricp-mysql</name>
+  <description>spring-boot-data-hikaricp-mysql</description>
+  <url>https://github.com/kdeng/spring-boot-data-hikaricp-mysql</url>
 
   <properties>
     <!-- dependency version -->
-    <composite-spring.version>6.1.1</composite-spring.version>
+    <composite-groovy.version>6.2</composite-groovy.version>
+    <composite-spring.version>5.18</composite-spring.version>
     <common-jackson.version>2.2</common-jackson.version>
-    <composite-jackson.version>2.13</composite-jackson.version>
-<!--    <spring-boot.version>2.2.0.RELEASE</spring-boot.version>-->
+    <composite-jackson.version>2.12</composite-jackson.version>
+    <spring-core.version>5.2.0.RELEASE</spring-core.version>
+    <spring-boot.version>2.1.9.RELEASE</spring-boot.version>
     <lombok.version>1.18.10</lombok.version>
 
     <!-- plugin version -->
-    <tiles-maven-plugin.version>2.18</tiles-maven-plugin.version>
+    <tiles-maven-plugin.version>2.15</tiles-maven-plugin.version>
   </properties>
 
   <dependencies>
 
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-groovy</artifactId>
+      <version>[${composite-groovy.version}]</version>
+    </dependency>
+
     <!-- core dependencies -->
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
-      <artifactId>composite-spring-boot-web</artifactId>
+      <artifactId>composite-spring-webmvc</artifactId>
+      <version>[${composite-spring.version}]</version>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-boot</artifactId>
       <version>[${composite-spring.version}]</version>
     </dependency>
     <dependency>
@@ -56,6 +69,12 @@
     <dependency>
       <groupId>nz.net.osnz.composite</groupId>
       <artifactId>composite-spring-boot-test</artifactId>
+      <version>[${composite-spring.version}]</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>nz.net.osnz.composite</groupId>
+      <artifactId>composite-spring-test</artifactId>
       <version>[${composite-spring.version}]</version>
       <scope>test</scope>
     </dependency>
@@ -88,6 +107,7 @@
           <filtering>false</filtering>
           <tiles>
             <tile>io.osnz.tiles:tile-java11:[1.1,2)</tile>
+            <tile>io.osnz.tiles:tile-groovy:[1.1,2)</tile>
           </tiles>
         </configuration>
       </plugin>

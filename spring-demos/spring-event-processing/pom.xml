@@ -14,10 +14,9 @@
   <properties>
     <!-- dependency version -->
     <composite-spring.version>5.30</composite-spring.version>
+
     <common-jackson.version>2.2</common-jackson.version>
     <composite-jackson.version>2.13</composite-jackson.version>
-    <spring-core.version>5.2.12.RELEASE</spring-core.version>
-    <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
     <lombok.version>1.18.10</lombok.version>
 
     <!-- plugin version -->

@@ -1,0 +1,14 @@
+
+### Server Settings
+server:
+  port: 9090
+
+management:
+  endpoint:
+    health:
+      enabled: true
+
+
+my:
+  name1: default-name1
+  name2: default-name2
